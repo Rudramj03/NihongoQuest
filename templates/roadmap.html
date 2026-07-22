@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Study Roadmap{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>🗺️ Your N5 → N1 Roadmap</h1>
+  <p>The Japanese-Language Proficiency Test (JLPT) has five levels. Here's what each one takes and how to use this site at every stage.</p>
+</div>
+
+{% set plans = {
+  "N5": ["Master hiragana & katakana in the Kana Lab until instant recall", "Learn ~800 words — run the N5 flashcard deck daily", "Study all N5 grammar points; listen to every example", "Play Typing Dash (kana sprint) to burn readings into muscle memory"],
+  "N4": ["Add ~700 new words and ~200 kanji — mix Quiz Arena modes", "Grammar: conditionals, obligation, passive — see the N4 guide", "Use Listening Lab weekly; comprehension at slow speed first", "Start reading simple graded readers or NHK Easy News"],
+  "N3": ["The bridge level: ~3,700 total words, ~650 kanji", "Drill the N3 quiz in 'Kanji → Reading' mode until 80%+", "Shadow the example sentences: play audio, repeat aloud", "Watch anime/dramas with Japanese subtitles for 20 min/day"],
+  "N2": ["Business-level Japanese: ~6,000 words, ~1,000 kanji", "Grammar nuance matters — study ものの, ざるを得ない & friends", "Read real newspaper articles; note unknown kanji in Explorer", "Listening Lab on hard mode: no replays, first try only"],
+  "N1": ["Near-native: ~10,000 words, ~2,000 kanji", "Master literary & formal patterns (べからず, ならでは...)", "Read editorials and novels; speed matters on the real exam", "Immerse daily — podcasts, news, and conversation practice"]
+} %}
+
+<div class="roadmap">
+  {% for lvl in levels %}
+  <div class="roadmap-step" id="{{ lvl }}" style="--step-color: {{ level_info[lvl].color }}">
+    <div class="card">
+      <h3 style="color:{{ level_info[lvl].color }}">{{ lvl }} — {{ level_info[lvl].label }}</h3>
+      <p style="color:var(--muted);font-weight:600">{{ level_info[lvl].desc }}</p>
+      <div class="meta">
+        <span>📚 ~{{ "{:,}".format(level_info[lvl].vocab_goal) }} words</span>
+        <span>🈷 ~{{ "{:,}".format(level_info[lvl].kanji_goal) }} kanji</span>
+        <span>⏳ {{ level_info[lvl].study_hours }} study hours</span>
+      </div>
+      <ul>
+        {% for tip in plans[lvl] %}<li>{{ tip }}</li>{% endfor %}
+      </ul>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+        <a class="btn small" href="/flashcards">Flashcards</a>
+        <a class="btn small green" href="/quiz">Quiz</a>
+        <a class="btn small ghost" href="/grammar">Grammar</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="card" style="margin-top:10px">
+  <h3>💡 The golden rules</h3>
+  <ul style="margin:10px 0 0 18px;color:var(--muted);font-weight:600;line-height:1.9">
+    <li><b>Consistency beats intensity</b> — 20 minutes daily outperforms 3 hours on Sunday.</li>
+    <li><b>Audio first</b> — always hear a word when you learn it. Every word on this site is speakable.</li>
+    <li><b>Output early</b> — say sentences aloud, even alone. Shadowing the example audio counts.</li>
+    <li><b>Games keep you coming back</b> — your XP and streak on the Progress page are the real metric.</li>
+  </ul>
+</div>
+
+{% endblock %}

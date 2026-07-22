@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Flashcards{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>🃏 Flashcards</h1>
+  <p>Tap the card to flip it. Listen, read, and mark whether you knew it — known words move to the back of the deck.</p>
+</div>
+
+<div class="chip-row" aria-label="Choose JLPT level">
+  {% for lvl in levels %}
+  <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }}</button>
+  {% endfor %}
+</div>
+
+<div class="game-shell">
+  <div class="hud">
+    <span class="pill" id="fcPos">1 / 0</span>
+    <div class="progress-track"><div class="progress-fill" id="fcBar"></div></div>
+    <span class="pill" id="fcKnown">✓ 0 known</span>
+  </div>
+
+  <div class="flashcard-stage">
+    <div class="flashcard" id="card" role="button" tabindex="0" aria-label="Flashcard — activate to flip">
+      <div class="flash-face front">
+        <div class="main" id="cardWord">…</div>
+        <div class="sub" id="cardKana"></div>
+      </div>
+      <div class="flash-face back">
+        <div class="main" id="cardMeaning">…</div>
+        <div class="sub" id="cardRomaji"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flash-controls">
+    <button class="speak-btn" id="fcSpeak">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Listen
+    </button>
+    <button class="btn ghost small" id="fcAgainBtn">🔁 Still learning</button>
+    <button class="btn green small" id="fcKnownBtn">✓ I know it!</button>
+  </div>
+  <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:14px">
+    Tip: press <b>Space</b> to flip, <b>K</b> for known, <b>L</b> to listen
+  </p>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  let deck = [], pos = 0, known = 0, flipped = false;
+  const card = document.getElementById("card");
+
+  async function load(level) {
+    const r = await fetch(`/api/vocab?level=${level}`);
+    deck = (await r.json()).words.sort(() => Math.random() - .5);
+    pos = 0; known = 0;
+    render();
+  }
+  function render() {
+    if (!deck.length) return;
+    const w = deck[pos % deck.length];
+    flipped = false;
+    card.classList.remove("flipped");
+    document.getElementById("cardWord").textContent = w.word;
+    document.getElementById("cardKana").textContent = w.kana;
+    document.getElementById("cardMeaning").textContent = w.meaning;
+    document.getElementById("cardRomaji").textContent = w.romaji;
+    document.getElementById("fcPos").textContent = `${(pos % deck.length) + 1} / ${deck.length}`;
+    document.getElementById("fcKnown").textContent = `✓ ${known} known`;
+    document.getElementById("fcBar").style.width = `${(known / deck.length) * 100}%`;
+  }
+  function flip() {
+    flipped = !flipped;
+    card.classList.toggle("flipped", flipped);
+    NQ.sfx.flip();
+  }
+  function current() { return deck[pos % deck.length]; }
+  function next(knewIt) {
+    if (knewIt) {
+      known++;
+      NQ.sfx.correct();
+      NQ.addXP(5, "flashcards");
+      deck.splice(pos % deck.length, 1);
+      if (!deck.length) {
+        NQ.confetti(); NQ.sfx.fanfare();
+        NQ.toast("Deck complete! +50 XP 🎉");
+        NQ.addXP(50, "flashcards");
+        const lvl = document.querySelector(".chip.active").dataset.level;
+        load(lvl);
+        return;
+      }
+    } else {
+      NQ.sfx.click();
+      pos++;
+    }
+    render();
+  }
+
+  card.addEventListener("click", flip);
+  card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } });
+  document.getElementById("fcSpeak").addEventListener("click", e => { e.stopPropagation(); NQ.speak(current().word); });
+  document.getElementById("fcKnownBtn").addEventListener("click", () => next(true));
+  document.getElementById("fcAgainBtn").addEventListener("click", () => next(false));
+  document.addEventListener("keydown", e => {
+    if (e.target.tagName === "INPUT") return;
+    if (e.key === "k" || e.key === "K") next(true);
+    if (e.key === "l" || e.key === "L") NQ.speak(current().word);
+  });
+
+  document.querySelectorAll(".chip[data-level]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      NQ.sfx.click();
+      document.querySelectorAll(".chip[data-level]").forEach(c => c.classList.toggle("active", c === chip));
+      load(chip.dataset.level);
+    });
+  });
+
+  load("N5");
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Grammar Guides{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>📖 Grammar Guides</h1>
+  <p>Core grammar for each JLPT level, explained simply with example sentences you can listen to.</p>
+</div>
+
+<div class="chip-row" aria-label="Level">
+  {% for lvl in levels %}
+  <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }} · {{ level_info[lvl].label }}</button>
+  {% endfor %}
+</div>
+
+{% for lvl, points in grammar.items() %}
+<div data-level-block="{{ lvl }}" {% if lvl != 'N5' %}style="display:none"{% endif %}>
+  {% for g in points %}
+  <details class="grammar-item">
+    <summary><span class="jp">{{ g.title }}</span></summary>
+    <div class="grammar-body">
+      <div class="structure">{{ g.structure }}</div>
+      <p>{{ g.meaning }}</p>
+      <div class="example-line">
+        <button class="speak-btn" data-say="{{ g.example }}" aria-label="Listen to example sentence" style="min-height:38px;padding:6px 14px">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <span class="jp-sentence">{{ g.example }}</span>
+        <span class="romaji">{{ g.example_romaji }}</span>
+        <span class="en">→ {{ g.example_en }}</span>
+      </div>
+    </div>
+  </details>
+  {% endfor %}
+</div>
+{% endfor %}
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  document.querySelectorAll(".chip[data-level]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click();
+    document.querySelectorAll(".chip[data-level]").forEach(x => x.classList.toggle("active", x === c));
+    document.querySelectorAll("[data-level-block]").forEach(b =>
+      b.style.display = b.dataset.levelBlock === c.dataset.level ? "" : "none");
+  }));
+  document.querySelectorAll(".speak-btn[data-say]").forEach(b =>
+    b.addEventListener("click", () => { NQ.sfx.click(); NQ.speak(b.dataset.say, 0.85); }));
+  document.querySelectorAll(".grammar-item summary").forEach(s =>
+    s.addEventListener("click", () => NQ.sfx.flip()));
+})();
+</script>
+{% endblock %}

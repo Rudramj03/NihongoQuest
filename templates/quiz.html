@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block title %}Quiz Arena{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>⚔️ Quiz Arena</h1>
+  <p>Ten questions per round. Answer fast, build combos, earn XP. Choose your level and battle mode!</p>
+</div>
+
+<div id="quizSetup">
+  <div class="chip-row" aria-label="Choose JLPT level">
+    {% for lvl in levels %}
+    <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }}</button>
+    {% endfor %}
+  </div>
+  <div class="chip-row" aria-label="Choose quiz mode">
+    <button class="chip active" data-mode="meaning">JP → Meaning</button>
+    <button class="chip" data-mode="reading">Kanji → Reading</button>
+    <button class="chip" data-mode="reverse">Meaning → JP</button>
+    <button class="chip" data-mode="kanji">Kanji Round</button>
+  </div>
+  <div style="margin-top:20px">
+    <button class="btn" id="startQuiz">🚀 Start round</button>
+  </div>
+</div>
+
+<div id="quizPlay" style="display:none" class="game-shell">
+  <div class="hud">
+    <span class="pill" id="qScore">Score: 0</span>
+    <span class="pill" id="qCombo" style="display:none">🔥 x1</span>
+    <div class="progress-track"><div class="progress-fill" id="qBar"></div></div>
+    <span class="pill" id="qCount">1/10</span>
+  </div>
+  <div class="card">
+    <div class="prompt-big" id="qPrompt">…</div>
+    <p class="prompt-sub" id="qSub"></p>
+    <div style="text-align:center;margin-bottom:16px">
+      <button class="speak-btn" id="qSpeak" style="display:none">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Hear it
+      </button>
+    </div>
+    <div class="option-grid" id="qOptions"></div>
+    <div class="explain-box" id="qExplain" style="display:none"></div>
+  </div>
+</div>
+
+<div id="quizResult" style="display:none" class="game-shell">
+  <div class="card result-panel">
+    <div class="big-score" id="qFinal">0/10</div>
+    <p id="qResultMsg"></p>
+    <button class="btn" id="qAgain">Another round</button>
+    <button class="btn ghost" id="qChange">Change settings</button>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  let level = "N5", mode = "meaning";
+  let qs = [], idx = 0, score = 0, combo = 0;
+
+  const setup = document.getElementById("quizSetup");
+  const play = document.getElementById("quizPlay");
+  const result = document.getElementById("quizResult");
+
+  document.querySelectorAll(".chip[data-level]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); level = c.dataset.level;
+    document.querySelectorAll(".chip[data-level]").forEach(x => x.classList.toggle("active", x === c));
+  }));
+  document.querySelectorAll(".chip[data-mode]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); mode = c.dataset.mode;
+    document.querySelectorAll(".chip[data-mode]").forEach(x => x.classList.toggle("active", x === c));
+  }));
+
+  function show(v) {
+    setup.style.display = v === "setup" ? "" : "none";
+    play.style.display = v === "play" ? "" : "none";
+    result.style.display = v === "result" ? "" : "none";
+  }
+
+  async function start() {
+    NQ.sfx.click();
+    const r = await fetch(`/api/quiz?level=${level}&mode=${mode}&count=10`);
+    qs = (await r.json()).questions;
+    idx = 0; score = 0; combo = 0;
+    document.getElementById("qScore").textContent = "Score: 0";
+    show("play");
+    render();
+  }
+
+  function render() {
+    const q = qs[idx];
+    const isJPPrompt = mode !== "reverse";
+    const p = document.getElementById("qPrompt");
+    p.textContent = q.prompt;
+    p.classList.toggle("jp", isJPPrompt);
+    p.style.fontSize = q.prompt.length > 14 ? "1.6rem" : "";
+    document.getElementById("qSub").textContent = q.sub;
+    document.getElementById("qCount").textContent = `${idx + 1}/${qs.length}`;
+    document.getElementById("qBar").style.width = `${(idx / qs.length) * 100}%`;
+    document.getElementById("qExplain").style.display = "none";
+    const sp = document.getElementById("qSpeak");
+    sp.style.display = q.speak ? "" : "none";
+    sp.onclick = () => NQ.speak(q.speak);
+    if (q.speak) NQ.speak(q.speak);
+
+    const box = document.getElementById("qOptions");
+    box.innerHTML = "";
+    q.options.forEach(opt => {
+      const b = document.createElement("button");
+      b.className = "option-btn";
+      if (mode === "reading" || mode === "reverse") b.classList.add("jp");
+      b.textContent = opt;
+      b.addEventListener("click", () => pick(b, opt, q));
+      box.appendChild(b);
+    });
+  }
+
+  function pick(btn, opt, q) {
+    document.querySelectorAll("#qOptions .option-btn").forEach(b => b.disabled = true);
+    const comboEl = document.getElementById("qCombo");
+    if (opt === q.answer) {
+      btn.classList.add("correct");
+      NQ.sfx.correct();
+      combo++;
+      score++;
+      const gained = 10 + Math.min(combo - 1, 5) * 2;
+      NQ.addXP(gained, "quiz");
+      document.getElementById("qScore").textContent = `Score: ${score}`;
+      if (combo >= 2) { comboEl.style.display = ""; comboEl.textContent = `🔥 x${combo}`; }
+    } else {
+      btn.classList.add("wrong");
+      NQ.sfx.wrong();
+      combo = 0;
+      comboEl.style.display = "none";
+      document.querySelectorAll("#qOptions .option-btn").forEach(b => {
+        if (b.textContent === q.answer) b.classList.add("correct");
+      });
+    }
+    const ex = document.getElementById("qExplain");
+    ex.textContent = q.explain;
+    ex.style.display = "";
+    setTimeout(() => { idx++; idx < qs.length ? render() : finish(); }, 1400);
+  }
+
+  function finish() {
+    show("result");
+    document.getElementById("qFinal").textContent = `${score}/${qs.length}`;
+    const pct = score / qs.length;
+    let msg;
+    if (pct === 1) { msg = "PERFECT ROUND! 完璧！ +40 XP bonus"; NQ.confetti(); NQ.sfx.fanfare(); NQ.addXP(40, "quiz"); }
+    else if (pct >= .7) { msg = "Strong performance! すごい！"; NQ.confetti(60); NQ.sfx.fanfare(); }
+    else if (pct >= .4) { msg = "Getting there — review and retry!"; }
+    else { msg = "Tough round. Check the flashcards for this level first!"; }
+    document.getElementById("qResultMsg").textContent = msg;
+  }
+
+  document.getElementById("startQuiz").addEventListener("click", start);
+  document.getElementById("qAgain").addEventListener("click", start);
+  document.getElementById("qChange").addEventListener("click", () => { NQ.sfx.click(); show("setup"); });
+})();
+</script>
+{% endblock %}

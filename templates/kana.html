@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block title %}Kana Lab{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>🈁 Kana Lab</h1>
+  <p>Tap any character to hear it. Master hiragana first, then katakana — they're the keys to everything else.</p>
+</div>
+
+<div class="chip-row" role="tablist" aria-label="Script">
+  <button class="chip active" data-script="hiragana">ひらがな Hiragana</button>
+  <button class="chip" data-script="katakana">カタカナ Katakana</button>
+  <span style="flex:1"></span>
+  <button class="btn small green" id="startKanaQuiz">⚡ Quiz me!</button>
+</div>
+
+<div id="chartView">
+  {% for script, groups in kana.items() %}
+  <div class="script-block" data-script-block="{{ script }}" {% if script != 'hiragana' %}style="display:none"{% endif %}>
+    <h2 class="section-title">Main sounds</h2>
+    <div class="card"><div class="kana-grid">
+      {% for k in groups.basic %}
+        {% if k %}<div class="kana-cell" data-kana="{{ k.kana }}" role="button" tabindex="0"><span class="k">{{ k.kana }}</span><span class="r">{{ k.romaji }}</span></div>
+        {% else %}<div class="kana-cell empty"></div>{% endif %}
+      {% endfor %}
+    </div></div>
+    <h2 class="section-title">Dakuten &amp; handakuten (゛゜)</h2>
+    <div class="card"><div class="kana-grid">
+      {% for k in groups.dakuten %}
+        {% if k %}<div class="kana-cell" data-kana="{{ k.kana }}" role="button" tabindex="0"><span class="k">{{ k.kana }}</span><span class="r">{{ k.romaji }}</span></div>
+        {% else %}<div class="kana-cell empty"></div>{% endif %}
+      {% endfor %}
+    </div></div>
+    <h2 class="section-title">Combination sounds (ゃゅょ)</h2>
+    <div class="card"><div class="kana-grid combo">
+      {% for k in groups.combo %}
+        {% if k %}<div class="kana-cell" data-kana="{{ k.kana }}" role="button" tabindex="0"><span class="k">{{ k.kana }}</span><span class="r">{{ k.romaji }}</span></div>
+        {% else %}<div class="kana-cell empty"></div>{% endif %}
+      {% endfor %}
+    </div></div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- kana quiz -->
+<div id="quizView" style="display:none" class="game-shell">
+  <div class="hud">
+    <span class="pill" id="kqScore">Score: 0</span>
+    <div class="progress-track"><div class="progress-fill" id="kqBar"></div></div>
+    <span class="pill" id="kqCount">1/10</span>
+  </div>
+  <div class="card">
+    <div class="prompt-big" id="kqPrompt">あ</div>
+    <p class="prompt-sub">Which romaji matches this kana?</p>
+    <div class="option-grid" id="kqOptions"></div>
+  </div>
+  <div style="text-align:center;margin-top:16px">
+    <button class="btn ghost small" id="kqQuit">← Back to charts</button>
+  </div>
+</div>
+
+<div id="kqResult" style="display:none" class="game-shell">
+  <div class="card result-panel">
+    <div class="big-score" id="kqFinal">0/10</div>
+    <p id="kqMsg">Nice work!</p>
+    <button class="btn" id="kqAgain">Play again</button>
+    <button class="btn ghost" id="kqBack">Back to charts</button>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  // chart interactions
+  document.querySelectorAll(".kana-cell[data-kana]").forEach(cell => {
+    const say = () => {
+      NQ.sfx.click();
+      NQ.speak(cell.dataset.kana);
+      cell.classList.add("playing");
+      setTimeout(() => cell.classList.remove("playing"), 600);
+    };
+    cell.addEventListener("click", say);
+    cell.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); say(); } });
+  });
+
+  let script = "hiragana";
+  document.querySelectorAll(".chip[data-script]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      NQ.sfx.click();
+      script = chip.dataset.script;
+      document.querySelectorAll(".chip[data-script]").forEach(c => c.classList.toggle("active", c === chip));
+      document.querySelectorAll("[data-script-block]").forEach(b =>
+        b.style.display = b.dataset.scriptBlock === script ? "" : "none");
+    });
+  });
+
+  // ----- kana quiz -----
+  const chartView = document.getElementById("chartView");
+  const quizView = document.getElementById("quizView");
+  const resultView = document.getElementById("kqResult");
+  let pool = [], qs = [], idx = 0, score = 0;
+  const TOTAL = 10;
+
+  async function loadPool() {
+    const r = await fetch(`/api/kana?script=${script}`);
+    pool = (await r.json()).kana;
+  }
+  function buildQuestions() {
+    const shuffled = [...pool].sort(() => Math.random() - .5).slice(0, TOTAL);
+    qs = shuffled.map(k => {
+      const wrong = pool.filter(p => p.romaji !== k.romaji).sort(() => Math.random() - .5).slice(0, 3).map(p => p.romaji);
+      return { kana: k.kana, answer: k.romaji, options: [...wrong, k.romaji].sort(() => Math.random() - .5) };
+    });
+  }
+  function show(view) {
+    chartView.style.display = view === "chart" ? "" : "none";
+    document.querySelector(".chip-row").style.display = view === "chart" ? "" : "none";
+    quizView.style.display = view === "quiz" ? "" : "none";
+    resultView.style.display = view === "result" ? "" : "none";
+  }
+  function renderQ() {
+    const q = qs[idx];
+    document.getElementById("kqPrompt").textContent = q.kana;
+    document.getElementById("kqCount").textContent = `${idx + 1}/${TOTAL}`;
+    document.getElementById("kqBar").style.width = `${(idx / TOTAL) * 100}%`;
+    NQ.speak(q.kana);
+    const box = document.getElementById("kqOptions");
+    box.innerHTML = "";
+    q.options.forEach(opt => {
+      const b = document.createElement("button");
+      b.className = "option-btn";
+      b.textContent = opt;
+      b.addEventListener("click", () => pick(b, opt, q));
+      box.appendChild(b);
+    });
+  }
+  function pick(btn, opt, q) {
+    document.querySelectorAll("#kqOptions .option-btn").forEach(b => b.disabled = true);
+    if (opt === q.answer) {
+      btn.classList.add("correct"); NQ.sfx.correct(); score++;
+      document.getElementById("kqScore").textContent = `Score: ${score}`;
+      NQ.addXP(10, "kana-quiz");
+    } else {
+      btn.classList.add("wrong"); NQ.sfx.wrong();
+      document.querySelectorAll("#kqOptions .option-btn").forEach(b => {
+        if (b.textContent === q.answer) b.classList.add("correct");
+      });
+    }
+    setTimeout(() => { idx++; idx < TOTAL ? renderQ() : finish(); }, 900);
+  }
+  function finish() {
+    show("result");
+    document.getElementById("kqFinal").textContent = `${score}/${TOTAL}`;
+    const msg = score === TOTAL ? "Perfect! 完璧！ +bonus 30 XP" :
+                score >= 7 ? "Great job! すごい！" :
+                score >= 4 ? "Good effort — keep practicing!" : "The charts are your friend — try again!";
+    document.getElementById("kqMsg").textContent = msg;
+    if (score === TOTAL) { NQ.confetti(); NQ.sfx.fanfare(); NQ.addXP(30, "kana-quiz"); }
+    else if (score >= 7) { NQ.confetti(50); NQ.sfx.fanfare(); }
+  }
+  async function startQuiz() {
+    NQ.sfx.click();
+    await loadPool();
+    buildQuestions();
+    idx = 0; score = 0;
+    document.getElementById("kqScore").textContent = "Score: 0";
+    show("quiz");
+    renderQ();
+  }
+  document.getElementById("startKanaQuiz").addEventListener("click", startQuiz);
+  document.getElementById("kqAgain").addEventListener("click", startQuiz);
+  document.getElementById("kqQuit").addEventListener("click", () => show("chart"));
+  document.getElementById("kqBack").addEventListener("click", () => show("chart"));
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Memory Match{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>🧩 Memory Match</h1>
+  <p>Flip two cards to find a matching pair. Fewer moves = more XP. Matched Japanese is spoken aloud!</p>
+</div>
+
+<div class="chip-row" aria-label="Game type">
+  <button class="chip active" data-type="kana">Kana ↔ Romaji</button>
+  <button class="chip" data-type="vocab">Word ↔ Meaning</button>
+</div>
+<div class="chip-row" id="levelRow" style="display:none" aria-label="Level">
+  {% for lvl in levels %}
+  <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }}</button>
+  {% endfor %}
+</div>
+
+<div class="game-shell">
+  <div class="hud">
+    <span class="pill" id="mmMoves">Moves: 0</span>
+    <span class="pill" id="mmTime">⏱ 0s</span>
+    <span class="pill" id="mmPairs">Pairs: 0/8</span>
+    <button class="btn small ghost" id="mmRestart">🔄 New game</button>
+  </div>
+  <div class="match-grid" id="mmGrid"></div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  let type = "kana", level = "N5";
+  let first = null, lock = false, moves = 0, matched = 0, total = 8;
+  let timer = null, secs = 0;
+
+  document.querySelectorAll(".chip[data-type]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); type = c.dataset.type;
+    document.querySelectorAll(".chip[data-type]").forEach(x => x.classList.toggle("active", x === c));
+    document.getElementById("levelRow").style.display = type === "vocab" ? "" : "none";
+    start();
+  }));
+  document.querySelectorAll(".chip[data-level]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); level = c.dataset.level;
+    document.querySelectorAll(".chip[data-level]").forEach(x => x.classList.toggle("active", x === c));
+    start();
+  }));
+  document.getElementById("mmRestart").addEventListener("click", () => { NQ.sfx.click(); start(); });
+
+  function tick() {
+    secs++;
+    document.getElementById("mmTime").textContent = `⏱ ${secs}s`;
+  }
+
+  async function start() {
+    clearInterval(timer); secs = 0; moves = 0; matched = 0; first = null; lock = false;
+    document.getElementById("mmTime").textContent = "⏱ 0s";
+    document.getElementById("mmMoves").textContent = "Moves: 0";
+    const r = await fetch(`/api/matching?type=${type}&level=${level}&pairs=8`);
+    const pairs = (await r.json()).pairs;
+    total = pairs.length;
+    document.getElementById("mmPairs").textContent = `Pairs: 0/${total}`;
+
+    const cards = [];
+    pairs.forEach((p, i) => {
+      cards.push({ id: i, text: p.a, speak: p.speak, jp: true });
+      cards.push({ id: i, text: p.b, speak: p.speak, jp: false });
+    });
+    cards.sort(() => Math.random() - .5);
+
+    const grid = document.getElementById("mmGrid");
+    grid.innerHTML = "";
+    cards.forEach(c => {
+      const b = document.createElement("button");
+      b.className = "match-card";
+      b.dataset.id = c.id;
+      b.dataset.speak = c.speak;
+      b.textContent = c.text;
+      b.setAttribute("aria-label", "Hidden card");
+      b.addEventListener("click", () => flip(b));
+      grid.appendChild(b);
+    });
+    timer = setInterval(tick, 1000);
+  }
+
+  function flip(card) {
+    if (lock || card.classList.contains("revealed") || card.classList.contains("matched")) return;
+    NQ.sfx.flip();
+    card.classList.add("revealed");
+    if (!first) { first = card; return; }
+
+    moves++;
+    document.getElementById("mmMoves").textContent = `Moves: ${moves}`;
+    if (first.dataset.id === card.dataset.id) {
+      first.classList.add("matched"); card.classList.add("matched");
+      first.classList.remove("revealed"); card.classList.remove("revealed");
+      NQ.sfx.correct();
+      NQ.speak(card.dataset.speak);
+      matched++;
+      NQ.addXP(8, "matching");
+      document.getElementById("mmPairs").textContent = `Pairs: ${matched}/${total}`;
+      first = null;
+      if (matched === total) {
+        clearInterval(timer);
+        const bonus = Math.max(60 - moves * 2, 10);
+        NQ.addXP(bonus, "matching");
+        NQ.confetti(); NQ.sfx.fanfare();
+        NQ.toast(`Cleared in ${moves} moves & ${secs}s! +${bonus} XP bonus 🎉`);
+      }
+    } else {
+      lock = true;
+      NQ.sfx.wrong();
+      const a = first; first = null;
+      setTimeout(() => {
+        a.classList.remove("revealed");
+        card.classList.remove("revealed");
+        lock = false;
+      }, 800);
+    }
+  }
+
+  start();
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,620 @@
+{
+ "N5": [
+  {
+   "title": "です / だ",
+   "structure": "Noun + です",
+   "meaning": "To be (polite copula). States what something is.",
+   "example": "私は学生です。",
+   "example_romaji": "Watashi wa gakusei desu.",
+   "example_en": "I am a student."
+  },
+  {
+   "title": "は (topic particle)",
+   "structure": "Topic + は + comment",
+   "meaning": "Marks the topic of the sentence (pronounced 'wa').",
+   "example": "これは本です。",
+   "example_romaji": "Kore wa hon desu.",
+   "example_en": "This is a book."
+  },
+  {
+   "title": "を (object particle)",
+   "structure": "Object + を + verb",
+   "meaning": "Marks the direct object of an action.",
+   "example": "水を飲みます。",
+   "example_romaji": "Mizu o nomimasu.",
+   "example_en": "I drink water."
+  },
+  {
+   "title": "に (time/destination)",
+   "structure": "Place/time + に",
+   "meaning": "Indicates destination, time, or location of existence.",
+   "example": "学校に行きます。",
+   "example_romaji": "Gakkou ni ikimasu.",
+   "example_en": "I go to school."
+  },
+  {
+   "title": "で (place of action)",
+   "structure": "Place + で + action",
+   "meaning": "Marks where an action takes place, or the means used.",
+   "example": "図書館で勉強します。",
+   "example_romaji": "Toshokan de benkyou shimasu.",
+   "example_en": "I study at the library."
+  },
+  {
+   "title": "ます form",
+   "structure": "Verb stem + ます",
+   "meaning": "Polite present/future tense of verbs.",
+   "example": "毎日日本語を勉強します。",
+   "example_romaji": "Mainichi nihongo o benkyou shimasu.",
+   "example_en": "I study Japanese every day."
+  },
+  {
+   "title": "ません (negative)",
+   "structure": "Verb stem + ません",
+   "meaning": "Polite negative form of verbs.",
+   "example": "肉を食べません。",
+   "example_romaji": "Niku o tabemasen.",
+   "example_en": "I don't eat meat."
+  },
+  {
+   "title": "ました (past)",
+   "structure": "Verb stem + ました",
+   "meaning": "Polite past tense of verbs.",
+   "example": "昨日映画を見ました。",
+   "example_romaji": "Kinou eiga o mimashita.",
+   "example_en": "I watched a movie yesterday."
+  },
+  {
+   "title": "があります / がいます",
+   "structure": "Noun + が + あります(things) / います(living)",
+   "meaning": "Expresses existence: 'there is/are'.",
+   "example": "猫がいます。",
+   "example_romaji": "Neko ga imasu.",
+   "example_en": "There is a cat."
+  },
+  {
+   "title": "〜たい (want to)",
+   "structure": "Verb stem + たい",
+   "meaning": "Expresses the speaker's desire to do something.",
+   "example": "日本へ行きたいです。",
+   "example_romaji": "Nihon e ikitai desu.",
+   "example_en": "I want to go to Japan."
+  },
+  {
+   "title": "〜てください",
+   "structure": "Verb te-form + ください",
+   "meaning": "Polite request: 'please do ~'.",
+   "example": "ゆっくり話してください。",
+   "example_romaji": "Yukkuri hanashite kudasai.",
+   "example_en": "Please speak slowly."
+  },
+  {
+   "title": "〜が好き",
+   "structure": "Noun + が + 好きです",
+   "meaning": "Expresses liking something.",
+   "example": "音楽が好きです。",
+   "example_romaji": "Ongaku ga suki desu.",
+   "example_en": "I like music."
+  },
+  {
+   "title": "〜ましょう",
+   "structure": "Verb stem + ましょう",
+   "meaning": "Suggestion: 'let's do ~'.",
+   "example": "一緒に昼ご飯を食べましょう。",
+   "example_romaji": "Issho ni hirugohan o tabemashou.",
+   "example_en": "Let's eat lunch together."
+  },
+  {
+   "title": "〜てもいいですか",
+   "structure": "Verb te-form + もいいですか",
+   "meaning": "Asking permission politely.",
+   "example": "トイレに行ってもいいですか。",
+   "example_romaji": "Toire ni itte mo ii desu ka.",
+   "example_en": "May I go to the toilet?"
+  },
+  {
+   "title": "〜から (reason)",
+   "structure": "Sentence + から",
+   "meaning": "Because; gives a reason.",
+   "example": "寒いから、窓を閉めます。",
+   "example_romaji": "Samui kara, mado o shimemasu.",
+   "example_en": "Because it's cold, I'll close the window."
+  },
+  {
+   "title": "〜の (possessive)",
+   "structure": "Noun + の + Noun",
+   "meaning": "Links nouns: possession or description.",
+   "example": "これは私の本です。",
+   "example_romaji": "Kore wa watashi no hon desu.",
+   "example_en": "This is my book."
+  }
+ ],
+ "N4": [
+  {
+   "title": "〜たことがある",
+   "structure": "Verb ta-form + ことがある",
+   "meaning": "Expresses past experience: 'have done ~ before'.",
+   "example": "寿司を食べたことがあります。",
+   "example_romaji": "Sushi o tabeta koto ga arimasu.",
+   "example_en": "I have eaten sushi before."
+  },
+  {
+   "title": "〜ながら",
+   "structure": "Verb stem + ながら",
+   "meaning": "Doing two actions at the same time: 'while ~ing'.",
+   "example": "音楽を聞きながら勉強します。",
+   "example_romaji": "Ongaku o kikinagara benkyou shimasu.",
+   "example_en": "I study while listening to music."
+  },
+  {
+   "title": "〜そうです (hearsay)",
+   "structure": "Plain form + そうです",
+   "meaning": "Reporting what you heard: 'I heard that ~'.",
+   "example": "明日雨が降るそうです。",
+   "example_romaji": "Ashita ame ga furu sou desu.",
+   "example_en": "I heard it will rain tomorrow."
+  },
+  {
+   "title": "〜かもしれない",
+   "structure": "Plain form + かもしれない",
+   "meaning": "Possibility: 'might, may'.",
+   "example": "彼は来ないかもしれません。",
+   "example_romaji": "Kare wa konai kamoshiremasen.",
+   "example_en": "He might not come."
+  },
+  {
+   "title": "〜なければならない",
+   "structure": "Verb nai-stem + なければならない",
+   "meaning": "Obligation: 'must, have to'.",
+   "example": "宿題をしなければなりません。",
+   "example_romaji": "Shukudai o shinakereba narimasen.",
+   "example_en": "I must do my homework."
+  },
+  {
+   "title": "〜てもいい",
+   "structure": "Verb te-form + もいい",
+   "meaning": "Permission: 'it's okay to ~, may'.",
+   "example": "ここで写真を撮ってもいいですか。",
+   "example_romaji": "Koko de shashin o totte mo ii desu ka.",
+   "example_en": "May I take photos here?"
+  },
+  {
+   "title": "〜てはいけない",
+   "structure": "Verb te-form + はいけない",
+   "meaning": "Prohibition: 'must not ~'.",
+   "example": "ここでタバコを吸ってはいけません。",
+   "example_romaji": "Koko de tabako o sutte wa ikemasen.",
+   "example_en": "You must not smoke here."
+  },
+  {
+   "title": "〜と思う",
+   "structure": "Plain form + と思う",
+   "meaning": "Expressing opinion: 'I think that ~'.",
+   "example": "この映画は面白いと思います。",
+   "example_romaji": "Kono eiga wa omoshiroi to omoimasu.",
+   "example_en": "I think this movie is interesting."
+  },
+  {
+   "title": "〜ば (conditional)",
+   "structure": "Verb ba-form",
+   "meaning": "Conditional: 'if ~'.",
+   "example": "急げば間に合います。",
+   "example_romaji": "Isogeba maniaimasu.",
+   "example_en": "If you hurry, you'll make it."
+  },
+  {
+   "title": "〜らしい",
+   "structure": "Plain form + らしい",
+   "meaning": "Seems / apparently (based on evidence).",
+   "example": "彼は忙しいらしいです。",
+   "example_romaji": "Kare wa isogashii rashii desu.",
+   "example_en": "It seems he is busy."
+  },
+  {
+   "title": "受身形 (passive)",
+   "structure": "Verb passive form (〜られる)",
+   "meaning": "Passive voice: 'to be done by'.",
+   "example": "先生に褒められました。",
+   "example_romaji": "Sensei ni homeraremashita.",
+   "example_en": "I was praised by the teacher."
+  },
+  {
+   "title": "〜すぎる",
+   "structure": "Verb stem / adj stem + すぎる",
+   "meaning": "Excess: 'too much ~'.",
+   "example": "食べすぎました。",
+   "example_romaji": "Tabesugimashita.",
+   "example_en": "I ate too much."
+  },
+  {
+   "title": "〜ておく",
+   "structure": "Verb te-form + おく",
+   "meaning": "Do something in advance / in preparation.",
+   "example": "飲み物を買っておきます。",
+   "example_romaji": "Nomimono o katte okimasu.",
+   "example_en": "I'll buy drinks in advance."
+  },
+  {
+   "title": "〜てしまう",
+   "structure": "Verb te-form + しまう",
+   "meaning": "Completion or regret: 'end up doing'.",
+   "example": "宿題を忘れてしまいました。",
+   "example_romaji": "Shukudai o wasurete shimaimashita.",
+   "example_en": "I ended up forgetting my homework."
+  },
+  {
+   "title": "〜やすい / 〜にくい",
+   "structure": "Verb stem + やすい / にくい",
+   "meaning": "Easy to ~ / hard to ~.",
+   "example": "この本は読みやすいです。",
+   "example_romaji": "Kono hon wa yomiyasui desu.",
+   "example_en": "This book is easy to read."
+  },
+  {
+   "title": "〜ようになる",
+   "structure": "Verb dict + ようになる",
+   "meaning": "Change: come to be able to / start doing.",
+   "example": "日本語が話せるようになりました。",
+   "example_romaji": "Nihongo ga hanaseru you ni narimashita.",
+   "example_en": "I became able to speak Japanese."
+  }
+ ],
+ "N3": [
+  {
+   "title": "〜ようにする",
+   "structure": "Verb dict/nai + ようにする",
+   "meaning": "To make an effort to do; try to make a habit of.",
+   "example": "毎日運動するようにしています。",
+   "example_romaji": "Mainichi undou suru you ni shite imasu.",
+   "example_en": "I try to exercise every day."
+  },
+  {
+   "title": "〜ことにする",
+   "structure": "Verb dict/nai + ことにする",
+   "meaning": "To decide to do something.",
+   "example": "タバコをやめることにしました。",
+   "example_romaji": "Tabako o yameru koto ni shimashita.",
+   "example_en": "I decided to quit smoking."
+  },
+  {
+   "title": "〜ばかり",
+   "structure": "Verb te-form + ばかり / Noun + ばかり",
+   "meaning": "Nothing but; just; only.",
+   "example": "彼はゲームばかりしています。",
+   "example_romaji": "Kare wa geemu bakari shite imasu.",
+   "example_en": "He does nothing but play games."
+  },
+  {
+   "title": "〜うちに",
+   "structure": "Verb/adj + うちに",
+   "meaning": "While; before a change occurs.",
+   "example": "熱いうちに食べてください。",
+   "example_romaji": "Atsui uchi ni tabete kudasai.",
+   "example_en": "Please eat it while it's hot."
+  },
+  {
+   "title": "〜ために",
+   "structure": "Verb dict / Noun の + ために",
+   "meaning": "For the purpose of; because of.",
+   "example": "家族のために働いています。",
+   "example_romaji": "Kazoku no tame ni hataraite imasu.",
+   "example_en": "I work for my family."
+  },
+  {
+   "title": "〜はずだ",
+   "structure": "Plain form + はずだ",
+   "meaning": "Expectation: 'should be, supposed to be'.",
+   "example": "彼はもう着いているはずです。",
+   "example_romaji": "Kare wa mou tsuite iru hazu desu.",
+   "example_en": "He should have arrived already."
+  },
+  {
+   "title": "〜わけではない",
+   "structure": "Plain form + わけではない",
+   "meaning": "Partial negation: 'it's not that ~'.",
+   "example": "嫌いなわけではありません。",
+   "example_romaji": "Kirai na wake dewa arimasen.",
+   "example_en": "It's not that I dislike it."
+  },
+  {
+   "title": "〜ように言う",
+   "structure": "Verb dict/nai + ように言う",
+   "meaning": "To tell someone to do something (indirect command).",
+   "example": "医者に休むように言われました。",
+   "example_romaji": "Isha ni yasumu you ni iwaremashita.",
+   "example_en": "The doctor told me to rest."
+  },
+  {
+   "title": "〜たびに",
+   "structure": "Verb dict / Noun の + たびに",
+   "meaning": "Every time; whenever.",
+   "example": "この歌を聞くたびに故郷を思い出します。",
+   "example_romaji": "Kono uta o kiku tabi ni furusato o omoidashimasu.",
+   "example_en": "Every time I hear this song, I remember my hometown."
+  },
+  {
+   "title": "〜おかげで / 〜せいで",
+   "structure": "Plain form + おかげで(positive) / せいで(negative)",
+   "meaning": "Thanks to ~ / because of ~ (blame).",
+   "example": "先生のおかげで合格しました。",
+   "example_romaji": "Sensei no okage de goukaku shimashita.",
+   "example_en": "Thanks to my teacher, I passed."
+  },
+  {
+   "title": "使役形 (causative)",
+   "structure": "Verb causative form (〜させる)",
+   "meaning": "To make or let someone do something.",
+   "example": "母は弟に野菜を食べさせました。",
+   "example_romaji": "Haha wa otouto ni yasai o tabesasemashita.",
+   "example_en": "Mom made my little brother eat vegetables."
+  },
+  {
+   "title": "〜べきだ",
+   "structure": "Verb dict + べきだ",
+   "meaning": "Should; ought to (strong advice).",
+   "example": "もっと早く寝るべきです。",
+   "example_romaji": "Motto hayaku neru beki desu.",
+   "example_en": "You should go to bed earlier."
+  },
+  {
+   "title": "〜ところ",
+   "structure": "Verb + ところ",
+   "meaning": "About to / in the middle of / just did.",
+   "example": "今から出かけるところです。",
+   "example_romaji": "Ima kara dekakeru tokoro desu.",
+   "example_en": "I'm just about to head out."
+  },
+  {
+   "title": "〜っぽい",
+   "structure": "Noun / Verb stem + っぽい",
+   "meaning": "Seems like; -ish (often negative nuance).",
+   "example": "彼は子供っぽいですね。",
+   "example_romaji": "Kare wa kodomoppoi desu ne.",
+   "example_en": "He's childish, isn't he?"
+  },
+  {
+   "title": "〜に対して",
+   "structure": "Noun + に対して",
+   "meaning": "Toward; in contrast to.",
+   "example": "お客様に対して丁寧に話してください。",
+   "example_romaji": "Okyakusama ni taishite teinei ni hanashite kudasai.",
+   "example_en": "Please speak politely to customers."
+  },
+  {
+   "title": "〜ばかりでなく",
+   "structure": "Plain form + ばかりでなく",
+   "meaning": "Not only ~ but also.",
+   "example": "彼は英語ばかりでなく中国語も話せます。",
+   "example_romaji": "Kare wa eigo bakari de naku chuugokugo mo hanasemasu.",
+   "example_en": "He can speak not only English but also Chinese."
+  }
+ ],
+ "N2": [
+  {
+   "title": "〜わけにはいかない",
+   "structure": "Verb dict/nai + わけにはいかない",
+   "meaning": "Cannot afford to; cannot possibly (social/moral reasons).",
+   "example": "大事な会議だから、休むわけにはいかない。",
+   "example_romaji": "Daiji na kaigi dakara, yasumu wake ni wa ikanai.",
+   "example_en": "It's an important meeting, so I can't take the day off."
+  },
+  {
+   "title": "〜ざるを得ない",
+   "structure": "Verb nai-stem + ざるを得ない",
+   "meaning": "Have no choice but to.",
+   "example": "上司の命令なので、従わざるを得ない。",
+   "example_romaji": "Joushi no meirei na node, shitagawazaru o enai.",
+   "example_en": "It's my boss's order, so I have no choice but to obey."
+  },
+  {
+   "title": "〜に違いない",
+   "structure": "Plain form + に違いない",
+   "meaning": "Must be; no doubt that.",
+   "example": "彼が犯人に違いない。",
+   "example_romaji": "Kare ga hannin ni chigainai.",
+   "example_en": "He must be the culprit."
+  },
+  {
+   "title": "〜つつある",
+   "structure": "Verb stem + つつある",
+   "meaning": "In the process of; gradually becoming.",
+   "example": "景気は回復しつつある。",
+   "example_romaji": "Keiki wa kaifuku shitsutsu aru.",
+   "example_en": "The economy is gradually recovering."
+  },
+  {
+   "title": "〜かねない",
+   "structure": "Verb stem + かねない",
+   "meaning": "Might (do something bad); capable of.",
+   "example": "彼なら嘘をつきかねない。",
+   "example_romaji": "Kare nara uso o tsukikanenai.",
+   "example_en": "He might well tell a lie."
+  },
+  {
+   "title": "〜に越したことはない",
+   "structure": "Plain form + に越したことはない",
+   "meaning": "Nothing beats; it's best to.",
+   "example": "健康に越したことはない。",
+   "example_romaji": "Kenkou ni koshita koto wa nai.",
+   "example_en": "Nothing beats good health."
+  },
+  {
+   "title": "〜ものの",
+   "structure": "Plain form + ものの",
+   "meaning": "Although; but (formal).",
+   "example": "免許は取ったものの、車がない。",
+   "example_romaji": "Menkyo wa totta monono, kuruma ga nai.",
+   "example_en": "Although I got my license, I don't have a car."
+  },
+  {
+   "title": "〜ようがない",
+   "structure": "Verb stem + ようがない",
+   "meaning": "There is no way to.",
+   "example": "連絡先が分からないので、知らせようがない。",
+   "example_romaji": "Renrakusaki ga wakaranai node, shiraseyou ga nai.",
+   "example_en": "I don't know their contact info, so there's no way to inform them."
+  },
+  {
+   "title": "〜に伴って",
+   "structure": "Noun / Verb dict + に伴って",
+   "meaning": "Along with; as a result of (change).",
+   "example": "経済の発展に伴って、生活が豊かになった。",
+   "example_romaji": "Keizai no hatten ni tomonatte, seikatsu ga yutaka ni natta.",
+   "example_en": "Along with economic development, life became richer."
+  },
+  {
+   "title": "〜恐れがある",
+   "structure": "Verb dict / Noun の + 恐れがある",
+   "meaning": "There is a risk/fear that.",
+   "example": "台風が上陸する恐れがある。",
+   "example_romaji": "Taifuu ga jouriku suru osore ga aru.",
+   "example_en": "There is a risk the typhoon will make landfall."
+  },
+  {
+   "title": "〜あげく",
+   "structure": "Verb ta-form + あげく",
+   "meaning": "After much ~, ended up (negative result).",
+   "example": "さんざん悩んだあげく、留学をやめた。",
+   "example_romaji": "Sanzan nayanda ageku, ryuugaku o yameta.",
+   "example_en": "After much agonizing, I gave up on studying abroad."
+  },
+  {
+   "title": "〜一方だ",
+   "structure": "Verb dict + 一方だ",
+   "meaning": "Keeps on ~ing (one-way change).",
+   "example": "物価は上がる一方だ。",
+   "example_romaji": "Bukka wa agaru ippou da.",
+   "example_en": "Prices keep on rising."
+  },
+  {
+   "title": "〜さえ〜ば",
+   "structure": "Noun + さえ + ば-form",
+   "meaning": "If only; as long as.",
+   "example": "時間さえあれば、旅行したい。",
+   "example_romaji": "Jikan sae areba, ryokou shitai.",
+   "example_en": "If only I had time, I'd like to travel."
+  },
+  {
+   "title": "〜どころか",
+   "structure": "Plain form + どころか",
+   "meaning": "Far from; let alone.",
+   "example": "漢字どころか、ひらがなも書けない。",
+   "example_romaji": "Kanji dokoroka, hiragana mo kakenai.",
+   "example_en": "He can't even write hiragana, let alone kanji."
+  }
+ ],
+ "N1": [
+  {
+   "title": "〜んばかりに",
+   "structure": "Verb nai-stem + んばかりに",
+   "meaning": "As if about to; on the verge of.",
+   "example": "彼女は泣かんばかりに頼んできた。",
+   "example_romaji": "Kanojo wa nakan bakari ni tanonde kita.",
+   "example_en": "She begged me as if she were about to cry."
+  },
+  {
+   "title": "〜を余儀なくされる",
+   "structure": "Noun + を余儀なくされる",
+   "meaning": "To be forced to (by circumstances).",
+   "example": "台風で中止を余儀なくされた。",
+   "example_romaji": "Taifuu de chuushi o yoginaku sareta.",
+   "example_en": "The typhoon forced us to cancel."
+  },
+  {
+   "title": "〜ずにはおかない",
+   "structure": "Verb nai-stem + ずにはおかない",
+   "meaning": "Will definitely cause; cannot help but.",
+   "example": "彼の言葉は人々を感動させずにはおかない。",
+   "example_romaji": "Kare no kotoba wa hitobito o kandou sasezu ni wa okanai.",
+   "example_en": "His words cannot fail to move people."
+  },
+  {
+   "title": "〜まみれ",
+   "structure": "Noun + まみれ",
+   "meaning": "Covered in (dirt, blood, sweat...).",
+   "example": "子供たちは泥まみれになって遊んだ。",
+   "example_romaji": "Kodomotachi wa doro mamire ni natte asonda.",
+   "example_en": "The children played until they were covered in mud."
+  },
+  {
+   "title": "〜ならでは",
+   "structure": "Noun + ならでは",
+   "meaning": "Unique to; characteristic of.",
+   "example": "京都ならではの風景ですね。",
+   "example_romaji": "Kyouto narade wa no fuukei desu ne.",
+   "example_en": "This scenery is unique to Kyoto."
+  },
+  {
+   "title": "〜に至って",
+   "structure": "Noun / Verb dict + に至って",
+   "meaning": "Only when it reached the point of.",
+   "example": "病気になるに至って、初めて健康の大切さに気づいた。",
+   "example_romaji": "Byouki ni naru ni itatte, hajimete kenkou no taisetsusa ni kizuita.",
+   "example_en": "Only when I got sick did I realize the importance of health."
+  },
+  {
+   "title": "〜たりとも",
+   "structure": "Number + たりとも + negative",
+   "meaning": "Not even (one).",
+   "example": "一秒たりとも無駄にできない。",
+   "example_romaji": "Ichibyou taritomo muda ni dekinai.",
+   "example_en": "I can't waste even a single second."
+  },
+  {
+   "title": "〜と相まって",
+   "structure": "Noun + と相まって",
+   "meaning": "Combined with; coupled with.",
+   "example": "才能が努力と相まって、彼は成功した。",
+   "example_romaji": "Sainou ga doryoku to aimatte, kare wa seikou shita.",
+   "example_en": "His talent, combined with effort, led to his success."
+  },
+  {
+   "title": "〜きらいがある",
+   "structure": "Verb dict / Noun の + きらいがある",
+   "meaning": "Has a tendency to (undesirable).",
+   "example": "彼は物事を大げさに言うきらいがある。",
+   "example_romaji": "Kare wa monogoto o oogesa ni iu kirai ga aru.",
+   "example_en": "He has a tendency to exaggerate things."
+  },
+  {
+   "title": "〜べからず",
+   "structure": "Verb dict + べからず",
+   "meaning": "Must not (written prohibition).",
+   "example": "ここにゴミを捨てるべからず。",
+   "example_romaji": "Koko ni gomi o suteru bekarazu.",
+   "example_en": "Do not throw trash here."
+  },
+  {
+   "title": "〜ゆえに",
+   "structure": "Noun / plain form + ゆえに",
+   "meaning": "Because of; due to (formal, literary).",
+   "example": "貧困ゆえに教育を受けられない子供もいる。",
+   "example_romaji": "Hinkon yue ni kyouiku o ukerarenai kodomo mo iru.",
+   "example_en": "Some children cannot receive education due to poverty."
+  },
+  {
+   "title": "〜んがために",
+   "structure": "Verb nai-stem + んがために",
+   "meaning": "In order to (strong determination, literary).",
+   "example": "勝たんがために、毎日練習した。",
+   "example_romaji": "Katan ga tame ni, mainichi renshuu shita.",
+   "example_en": "I practiced every day in order to win."
+  },
+  {
+   "title": "〜ともなると",
+   "structure": "Noun + ともなると",
+   "meaning": "When it comes to (a high level/status).",
+   "example": "社長ともなると、自由な時間はほとんどない。",
+   "example_romaji": "Shachou tomo naru to, jiyuu na jikan wa hotondo nai.",
+   "example_en": "When you become company president, you have almost no free time."
+  },
+  {
+   "title": "〜を皮切りに",
+   "structure": "Noun + を皮切りに",
+   "meaning": "Starting with (a series of events).",
+   "example": "東京を皮切りに、全国でコンサートを行う。",
+   "example_romaji": "Toukyou o kawakiri ni, zenkoku de konsaato o okonau.",
+   "example_en": "Starting with Tokyo, they will hold concerts nationwide."
+  }
+ ]
+}

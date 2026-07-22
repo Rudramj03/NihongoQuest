@@ -1,0 +1,1212 @@
+{
+ "N5": [
+  {
+   "kanji": "日",
+   "onyomi": "ニチ、ジツ",
+   "kunyomi": "ひ、-び",
+   "meaning": "day, sun",
+   "example": "日本 (にほん) — Japan",
+   "strokes": 4
+  },
+  {
+   "kanji": "月",
+   "onyomi": "ゲツ、ガツ",
+   "kunyomi": "つき",
+   "meaning": "month, moon",
+   "example": "月曜日 (げつようび) — Monday",
+   "strokes": 4
+  },
+  {
+   "kanji": "火",
+   "onyomi": "カ",
+   "kunyomi": "ひ",
+   "meaning": "fire",
+   "example": "火曜日 (かようび) — Tuesday",
+   "strokes": 4
+  },
+  {
+   "kanji": "水",
+   "onyomi": "スイ",
+   "kunyomi": "みず",
+   "meaning": "water",
+   "example": "水曜日 (すいようび) — Wednesday",
+   "strokes": 4
+  },
+  {
+   "kanji": "木",
+   "onyomi": "モク、ボク",
+   "kunyomi": "き",
+   "meaning": "tree, wood",
+   "example": "木曜日 (もくようび) — Thursday",
+   "strokes": 4
+  },
+  {
+   "kanji": "金",
+   "onyomi": "キン",
+   "kunyomi": "かね",
+   "meaning": "gold, money",
+   "example": "お金 (おかね) — money",
+   "strokes": 8
+  },
+  {
+   "kanji": "土",
+   "onyomi": "ド、ト",
+   "kunyomi": "つち",
+   "meaning": "earth, soil",
+   "example": "土曜日 (どようび) — Saturday",
+   "strokes": 3
+  },
+  {
+   "kanji": "人",
+   "onyomi": "ジン、ニン",
+   "kunyomi": "ひと",
+   "meaning": "person",
+   "example": "日本人 (にほんじん) — Japanese person",
+   "strokes": 2
+  },
+  {
+   "kanji": "山",
+   "onyomi": "サン",
+   "kunyomi": "やま",
+   "meaning": "mountain",
+   "example": "富士山 (ふじさん) — Mt. Fuji",
+   "strokes": 3
+  },
+  {
+   "kanji": "川",
+   "onyomi": "セン",
+   "kunyomi": "かわ",
+   "meaning": "river",
+   "example": "川で泳ぐ — swim in the river",
+   "strokes": 3
+  },
+  {
+   "kanji": "大",
+   "onyomi": "ダイ、タイ",
+   "kunyomi": "おお(きい)",
+   "meaning": "big",
+   "example": "大学 (だいがく) — university",
+   "strokes": 3
+  },
+  {
+   "kanji": "小",
+   "onyomi": "ショウ",
+   "kunyomi": "ちい(さい)",
+   "meaning": "small",
+   "example": "小学校 (しょうがっこう) — elementary school",
+   "strokes": 3
+  },
+  {
+   "kanji": "上",
+   "onyomi": "ジョウ",
+   "kunyomi": "うえ、あ(がる)",
+   "meaning": "up, above",
+   "example": "机の上 (つくえのうえ) — on the desk",
+   "strokes": 3
+  },
+  {
+   "kanji": "下",
+   "onyomi": "カ、ゲ",
+   "kunyomi": "した、さ(がる)",
+   "meaning": "down, below",
+   "example": "下さい (ください) — please give me",
+   "strokes": 3
+  },
+  {
+   "kanji": "中",
+   "onyomi": "チュウ",
+   "kunyomi": "なか",
+   "meaning": "inside, middle",
+   "example": "中国 (ちゅうごく) — China",
+   "strokes": 4
+  },
+  {
+   "kanji": "一",
+   "onyomi": "イチ",
+   "kunyomi": "ひと(つ)",
+   "meaning": "one",
+   "example": "一つ (ひとつ) — one thing",
+   "strokes": 1
+  },
+  {
+   "kanji": "二",
+   "onyomi": "ニ",
+   "kunyomi": "ふた(つ)",
+   "meaning": "two",
+   "example": "二人 (ふたり) — two people",
+   "strokes": 2
+  },
+  {
+   "kanji": "三",
+   "onyomi": "サン",
+   "kunyomi": "みっ(つ)",
+   "meaning": "three",
+   "example": "三月 (さんがつ) — March",
+   "strokes": 3
+  },
+  {
+   "kanji": "年",
+   "onyomi": "ネン",
+   "kunyomi": "とし",
+   "meaning": "year",
+   "example": "今年 (ことし) — this year",
+   "strokes": 6
+  },
+  {
+   "kanji": "時",
+   "onyomi": "ジ",
+   "kunyomi": "とき",
+   "meaning": "time, hour",
+   "example": "三時 (さんじ) — 3 o'clock",
+   "strokes": 10
+  },
+  {
+   "kanji": "行",
+   "onyomi": "コウ、ギョウ",
+   "kunyomi": "い(く)",
+   "meaning": "go",
+   "example": "銀行 (ぎんこう) — bank",
+   "strokes": 6
+  },
+  {
+   "kanji": "見",
+   "onyomi": "ケン",
+   "kunyomi": "み(る)",
+   "meaning": "see",
+   "example": "見せる (みせる) — to show",
+   "strokes": 7
+  },
+  {
+   "kanji": "食",
+   "onyomi": "ショク",
+   "kunyomi": "た(べる)",
+   "meaning": "eat",
+   "example": "食堂 (しょくどう) — cafeteria",
+   "strokes": 9
+  },
+  {
+   "kanji": "語",
+   "onyomi": "ゴ",
+   "kunyomi": "かた(る)",
+   "meaning": "language, word",
+   "example": "日本語 (にほんご) — Japanese",
+   "strokes": 14
+  },
+  {
+   "kanji": "学",
+   "onyomi": "ガク",
+   "kunyomi": "まな(ぶ)",
+   "meaning": "study, learning",
+   "example": "学生 (がくせい) — student",
+   "strokes": 8
+  },
+  {
+   "kanji": "四",
+   "onyomi": "シ",
+   "kunyomi": "よん、よっ(つ)",
+   "meaning": "four",
+   "example": "四月 (しがつ) — April",
+   "strokes": 5
+  },
+  {
+   "kanji": "五",
+   "onyomi": "ゴ",
+   "kunyomi": "いつ(つ)",
+   "meaning": "five",
+   "example": "五人 (ごにん) — five people",
+   "strokes": 4
+  },
+  {
+   "kanji": "百",
+   "onyomi": "ヒャク",
+   "kunyomi": "-",
+   "meaning": "hundred",
+   "example": "三百 (さんびゃく) — three hundred",
+   "strokes": 6
+  },
+  {
+   "kanji": "六",
+   "onyomi": "ロク",
+   "kunyomi": "むっ(つ)",
+   "meaning": "six",
+   "example": "六時 (ろくじ) — 6 o'clock",
+   "strokes": 4
+  },
+  {
+   "kanji": "千",
+   "onyomi": "セン",
+   "kunyomi": "ち",
+   "meaning": "thousand",
+   "example": "千円 (せんえん) — 1,000 yen",
+   "strokes": 3
+  }
+ ],
+ "N4": [
+  {
+   "kanji": "世",
+   "onyomi": "セ、セイ",
+   "kunyomi": "よ",
+   "meaning": "world, generation",
+   "example": "世界 (せかい) — world",
+   "strokes": 5
+  },
+  {
+   "kanji": "界",
+   "onyomi": "カイ",
+   "kunyomi": "—",
+   "meaning": "boundary, world",
+   "example": "世界中 (せかいじゅう) — all over the world",
+   "strokes": 9
+  },
+  {
+   "kanji": "堂",
+   "onyomi": "ドウ",
+   "kunyomi": "—",
+   "meaning": "hall",
+   "example": "食堂 (しょくどう) — dining hall",
+   "strokes": 11
+  },
+  {
+   "kanji": "始",
+   "onyomi": "シ",
+   "kunyomi": "はじ(める)",
+   "meaning": "begin",
+   "example": "始まる (はじまる) — to begin",
+   "strokes": 8
+  },
+  {
+   "kanji": "終",
+   "onyomi": "シュウ",
+   "kunyomi": "お(わる)",
+   "meaning": "end",
+   "example": "終電 (しゅうでん) — last train",
+   "strokes": 11
+  },
+  {
+   "kanji": "働",
+   "onyomi": "ドウ",
+   "kunyomi": "はたら(く)",
+   "meaning": "work",
+   "example": "働く (はたらく) — to work",
+   "strokes": 13
+  },
+  {
+   "kanji": "勉",
+   "onyomi": "ベン",
+   "kunyomi": "—",
+   "meaning": "exertion, effort",
+   "example": "勉強 (べんきょう) — study",
+   "strokes": 10
+  },
+  {
+   "kanji": "強",
+   "onyomi": "キョウ",
+   "kunyomi": "つよ(い)",
+   "meaning": "strong",
+   "example": "強い (つよい) — strong",
+   "strokes": 11
+  },
+  {
+   "kanji": "弱",
+   "onyomi": "ジャク",
+   "kunyomi": "よわ(い)",
+   "meaning": "weak",
+   "example": "弱点 (じゃくてん) — weak point",
+   "strokes": 10
+  },
+  {
+   "kanji": "旅",
+   "onyomi": "リョ",
+   "kunyomi": "たび",
+   "meaning": "travel",
+   "example": "旅行 (りょこう) — trip",
+   "strokes": 10
+  },
+  {
+   "kanji": "住",
+   "onyomi": "ジュウ",
+   "kunyomi": "す(む)",
+   "meaning": "live, reside",
+   "example": "住所 (じゅうしょ) — address",
+   "strokes": 7
+  },
+  {
+   "kanji": "貸",
+   "onyomi": "タイ",
+   "kunyomi": "か(す)",
+   "meaning": "lend",
+   "example": "貸してください — please lend me",
+   "strokes": 12
+  },
+  {
+   "kanji": "借",
+   "onyomi": "シャク",
+   "kunyomi": "か(りる)",
+   "meaning": "borrow",
+   "example": "借りる (かりる) — to borrow",
+   "strokes": 10
+  },
+  {
+   "kanji": "送",
+   "onyomi": "ソウ",
+   "kunyomi": "おく(る)",
+   "meaning": "send",
+   "example": "送信 (そうしん) — sending (mail)",
+   "strokes": 9
+  },
+  {
+   "kanji": "急",
+   "onyomi": "キュウ",
+   "kunyomi": "いそ(ぐ)",
+   "meaning": "hurry, urgent",
+   "example": "急行 (きゅうこう) — express train",
+   "strokes": 9
+  },
+  {
+   "kanji": "力",
+   "onyomi": "リョク、リキ",
+   "kunyomi": "ちから",
+   "meaning": "power, strength",
+   "example": "努力 (どりょく) — effort",
+   "strokes": 2
+  },
+  {
+   "kanji": "験",
+   "onyomi": "ケン",
+   "kunyomi": "—",
+   "meaning": "test, verification",
+   "example": "試験 (しけん) — exam",
+   "strokes": 18
+  },
+  {
+   "kanji": "試",
+   "onyomi": "シ",
+   "kunyomi": "ため(す)",
+   "meaning": "try, test",
+   "example": "試す (ためす) — to try out",
+   "strokes": 13
+  },
+  {
+   "kanji": "説",
+   "onyomi": "セツ",
+   "kunyomi": "と(く)",
+   "meaning": "explain, theory",
+   "example": "説明 (せつめい) — explanation",
+   "strokes": 14
+  },
+  {
+   "kanji": "病",
+   "onyomi": "ビョウ",
+   "kunyomi": "やまい",
+   "meaning": "illness",
+   "example": "病院 (びょういん) — hospital",
+   "strokes": 10
+  },
+  {
+   "kanji": "楽",
+   "onyomi": "ガク、ラク",
+   "kunyomi": "たの(しい)",
+   "meaning": "fun, music",
+   "example": "音楽 (おんがく) — music",
+   "strokes": 13
+  },
+  {
+   "kanji": "音",
+   "onyomi": "オン",
+   "kunyomi": "おと",
+   "meaning": "sound",
+   "example": "音 (おと) — sound",
+   "strokes": 9
+  },
+  {
+   "kanji": "映",
+   "onyomi": "エイ",
+   "kunyomi": "うつ(る)",
+   "meaning": "reflect, project",
+   "example": "映画 (えいが) — movie",
+   "strokes": 9
+  },
+  {
+   "kanji": "画",
+   "onyomi": "ガ、カク",
+   "kunyomi": "-",
+   "meaning": "picture, stroke",
+   "example": "画面 (がめん) — screen",
+   "strokes": 8
+  },
+  {
+   "kanji": "親",
+   "onyomi": "シン",
+   "kunyomi": "おや、した(しい)",
+   "meaning": "parent, intimate",
+   "example": "両親 (りょうしん) — parents",
+   "strokes": 16
+  },
+  {
+   "kanji": "切",
+   "onyomi": "セツ",
+   "kunyomi": "き(る)",
+   "meaning": "cut",
+   "example": "大切 (たいせつ) — important",
+   "strokes": 4
+  },
+  {
+   "kanji": "開",
+   "onyomi": "カイ",
+   "kunyomi": "あ(ける)、ひら(く)",
+   "meaning": "open",
+   "example": "開店 (かいてん) — shop opening",
+   "strokes": 12
+  },
+  {
+   "kanji": "閉",
+   "onyomi": "ヘイ",
+   "kunyomi": "し(める)、と(じる)",
+   "meaning": "close",
+   "example": "閉店 (へいてん) — shop closing",
+   "strokes": 11
+  },
+  {
+   "kanji": "集",
+   "onyomi": "シュウ",
+   "kunyomi": "あつ(まる)",
+   "meaning": "gather",
+   "example": "集合 (しゅうごう) — meeting up",
+   "strokes": 12
+  },
+  {
+   "kanji": "運",
+   "onyomi": "ウン",
+   "kunyomi": "はこ(ぶ)",
+   "meaning": "carry, luck",
+   "example": "運転 (うんてん) — driving",
+   "strokes": 12
+  }
+ ],
+ "N3": [
+  {
+   "kanji": "議",
+   "onyomi": "ギ",
+   "kunyomi": "—",
+   "meaning": "deliberation, discussion",
+   "example": "会議 (かいぎ) — meeting",
+   "strokes": 20
+  },
+  {
+   "kanji": "論",
+   "onyomi": "ロン",
+   "kunyomi": "—",
+   "meaning": "argument, theory",
+   "example": "論文 (ろんぶん) — thesis",
+   "strokes": 15
+  },
+  {
+   "kanji": "求",
+   "onyomi": "キュウ",
+   "kunyomi": "もと(める)",
+   "meaning": "seek, request",
+   "example": "求人 (きゅうじん) — job offer",
+   "strokes": 7
+  },
+  {
+   "kanji": "技",
+   "onyomi": "ギ",
+   "kunyomi": "わざ",
+   "meaning": "skill, technique",
+   "example": "技術 (ぎじゅつ) — technology",
+   "strokes": 7
+  },
+  {
+   "kanji": "能",
+   "onyomi": "ノウ",
+   "kunyomi": "—",
+   "meaning": "ability",
+   "example": "可能 (かのう) — possible",
+   "strokes": 10
+  },
+  {
+   "kanji": "係",
+   "onyomi": "ケイ",
+   "kunyomi": "かか(る)",
+   "meaning": "connection, in charge",
+   "example": "関係 (かんけい) — relationship",
+   "strokes": 9
+  },
+  {
+   "kanji": "環",
+   "onyomi": "カン",
+   "kunyomi": "—",
+   "meaning": "ring, surroundings",
+   "example": "環境 (かんきょう) — environment",
+   "strokes": 17
+  },
+  {
+   "kanji": "境",
+   "onyomi": "キョウ",
+   "kunyomi": "さかい",
+   "meaning": "boundary",
+   "example": "国境 (こっきょう) — national border",
+   "strokes": 14
+  },
+  {
+   "kanji": "識",
+   "onyomi": "シキ",
+   "kunyomi": "—",
+   "meaning": "discern, know",
+   "example": "知識 (ちしき) — knowledge",
+   "strokes": 19
+  },
+  {
+   "kanji": "判",
+   "onyomi": "ハン",
+   "kunyomi": "—",
+   "meaning": "judge",
+   "example": "判断 (はんだん) — judgment",
+   "strokes": 7
+  },
+  {
+   "kanji": "断",
+   "onyomi": "ダン",
+   "kunyomi": "ことわ(る)",
+   "meaning": "cut off, decline",
+   "example": "断る (ことわる) — to refuse",
+   "strokes": 11
+  },
+  {
+   "kanji": "責",
+   "onyomi": "セキ",
+   "kunyomi": "せ(める)",
+   "meaning": "blame, responsibility",
+   "example": "責任 (せきにん) — responsibility",
+   "strokes": 11
+  },
+  {
+   "kanji": "任",
+   "onyomi": "ニン",
+   "kunyomi": "まか(せる)",
+   "meaning": "duty, entrust",
+   "example": "任せる (まかせる) — to entrust",
+   "strokes": 6
+  },
+  {
+   "kanji": "評",
+   "onyomi": "ヒョウ",
+   "kunyomi": "—",
+   "meaning": "evaluate, criticize",
+   "example": "評価 (ひょうか) — evaluation",
+   "strokes": 12
+  },
+  {
+   "kanji": "増",
+   "onyomi": "ゾウ",
+   "kunyomi": "ふ(える)",
+   "meaning": "increase",
+   "example": "増加 (ぞうか) — increase",
+   "strokes": 14
+  },
+  {
+   "kanji": "減",
+   "onyomi": "ゲン",
+   "kunyomi": "へ(る)",
+   "meaning": "decrease",
+   "example": "減少 (げんしょう) — decrease",
+   "strokes": 12
+  },
+  {
+   "kanji": "収",
+   "onyomi": "シュウ",
+   "kunyomi": "おさ(める)",
+   "meaning": "income, collect",
+   "example": "収入 (しゅうにゅう) — income",
+   "strokes": 4
+  },
+  {
+   "kanji": "支",
+   "onyomi": "シ",
+   "kunyomi": "ささ(える)",
+   "meaning": "support, branch",
+   "example": "支払う (しはらう) — to pay",
+   "strokes": 4
+  },
+  {
+   "kanji": "格",
+   "onyomi": "カク",
+   "kunyomi": "—",
+   "meaning": "status, standard",
+   "example": "合格 (ごうかく) — passing (an exam)",
+   "strokes": 10
+  },
+  {
+   "kanji": "程",
+   "onyomi": "テイ",
+   "kunyomi": "ほど",
+   "meaning": "extent, degree",
+   "example": "程度 (ていど) — degree, level",
+   "strokes": 12
+  },
+  {
+   "kanji": "感",
+   "onyomi": "カン",
+   "kunyomi": "-",
+   "meaning": "feeling",
+   "example": "感情 (かんじょう) — emotion",
+   "strokes": 13
+  },
+  {
+   "kanji": "情",
+   "onyomi": "ジョウ",
+   "kunyomi": "なさ(け)",
+   "meaning": "emotion, circumstances",
+   "example": "情報 (じょうほう) — information",
+   "strokes": 11
+  },
+  {
+   "kanji": "報",
+   "onyomi": "ホウ",
+   "kunyomi": "むく(いる)",
+   "meaning": "report, reward",
+   "example": "報告 (ほうこく) — report",
+   "strokes": 12
+  },
+  {
+   "kanji": "告",
+   "onyomi": "コク",
+   "kunyomi": "つ(げる)",
+   "meaning": "announce",
+   "example": "広告 (こうこく) — advertisement",
+   "strokes": 7
+  },
+  {
+   "kanji": "面",
+   "onyomi": "メン",
+   "kunyomi": "おもて",
+   "meaning": "face, surface",
+   "example": "場面 (ばめん) — scene",
+   "strokes": 9
+  },
+  {
+   "kanji": "接",
+   "onyomi": "セツ",
+   "kunyomi": "つ(ぐ)",
+   "meaning": "contact, join",
+   "example": "面接 (めんせつ) — interview",
+   "strokes": 11
+  },
+  {
+   "kanji": "続",
+   "onyomi": "ゾク",
+   "kunyomi": "つづ(く)",
+   "meaning": "continue",
+   "example": "連続 (れんぞく) — series",
+   "strokes": 13
+  },
+  {
+   "kanji": "最",
+   "onyomi": "サイ",
+   "kunyomi": "もっと(も)",
+   "meaning": "most",
+   "example": "最高 (さいこう) — the best",
+   "strokes": 12
+  },
+  {
+   "kanji": "初",
+   "onyomi": "ショ",
+   "kunyomi": "はじ(め)",
+   "meaning": "first",
+   "example": "最初 (さいしょ) — the beginning",
+   "strokes": 7
+  },
+  {
+   "kanji": "戻",
+   "onyomi": "レイ",
+   "kunyomi": "もど(る)",
+   "meaning": "return",
+   "example": "戻る (もどる) — to go back",
+   "strokes": 7
+  }
+ ],
+ "N2": [
+  {
+   "kanji": "継",
+   "onyomi": "ケイ",
+   "kunyomi": "つ(ぐ)",
+   "meaning": "inherit, continue",
+   "example": "継続 (けいぞく) — continuation",
+   "strokes": 13
+  },
+  {
+   "kanji": "析",
+   "onyomi": "セキ",
+   "kunyomi": "—",
+   "meaning": "analyze",
+   "example": "分析 (ぶんせき) — analysis",
+   "strokes": 8
+  },
+  {
+   "kanji": "依",
+   "onyomi": "イ",
+   "kunyomi": "—",
+   "meaning": "depend on",
+   "example": "依頼 (いらい) — request",
+   "strokes": 8
+  },
+  {
+   "kanji": "拠",
+   "onyomi": "キョ",
+   "kunyomi": "—",
+   "meaning": "basis, evidence",
+   "example": "証拠 (しょうこ) — evidence",
+   "strokes": 8
+  },
+  {
+   "kanji": "維",
+   "onyomi": "イ",
+   "kunyomi": "—",
+   "meaning": "maintain",
+   "example": "維持 (いじ) — maintenance",
+   "strokes": 14
+  },
+  {
+   "kanji": "含",
+   "onyomi": "ガン",
+   "kunyomi": "ふく(む)",
+   "meaning": "include, contain",
+   "example": "含む (ふくむ) — to include",
+   "strokes": 7
+  },
+  {
+   "kanji": "傾",
+   "onyomi": "ケイ",
+   "kunyomi": "かたむ(く)",
+   "meaning": "lean, tendency",
+   "example": "傾向 (けいこう) — tendency",
+   "strokes": 13
+  },
+  {
+   "kanji": "契",
+   "onyomi": "ケイ",
+   "kunyomi": "ちぎ(る)",
+   "meaning": "pledge, contract",
+   "example": "契約 (けいやく) — contract",
+   "strokes": 9
+  },
+  {
+   "kanji": "構",
+   "onyomi": "コウ",
+   "kunyomi": "かま(える)",
+   "meaning": "structure, build",
+   "example": "構造 (こうぞう) — structure",
+   "strokes": 14
+  },
+  {
+   "kanji": "削",
+   "onyomi": "サク",
+   "kunyomi": "けず(る)",
+   "meaning": "shave, delete",
+   "example": "削除 (さくじょ) — deletion",
+   "strokes": 9
+  },
+  {
+   "kanji": "詳",
+   "onyomi": "ショウ",
+   "kunyomi": "くわ(しい)",
+   "meaning": "detailed",
+   "example": "詳細 (しょうさい) — details",
+   "strokes": 13
+  },
+  {
+   "kanji": "礎",
+   "onyomi": "ソ",
+   "kunyomi": "いしずえ",
+   "meaning": "cornerstone",
+   "example": "基礎 (きそ) — foundation",
+   "strokes": 18
+  },
+  {
+   "kanji": "換",
+   "onyomi": "カン",
+   "kunyomi": "か(える)",
+   "meaning": "exchange",
+   "example": "交換 (こうかん) — exchange",
+   "strokes": 12
+  },
+  {
+   "kanji": "是",
+   "onyomi": "ゼ",
+   "kunyomi": "—",
+   "meaning": "right, correct",
+   "example": "是非 (ぜひ) — by all means",
+   "strokes": 9
+  },
+  {
+   "kanji": "統",
+   "onyomi": "トウ",
+   "kunyomi": "す(べる)",
+   "meaning": "unite, govern",
+   "example": "統計 (とうけい) — statistics",
+   "strokes": 12
+  },
+  {
+   "kanji": "我",
+   "onyomi": "ガ",
+   "kunyomi": "われ",
+   "meaning": "self, I",
+   "example": "我慢 (がまん) — patience",
+   "strokes": 7
+  },
+  {
+   "kanji": "慢",
+   "onyomi": "マン",
+   "kunyomi": "-",
+   "meaning": "laziness, pride",
+   "example": "自慢 (じまん) — boasting",
+   "strokes": 14
+  },
+  {
+   "kanji": "募",
+   "onyomi": "ボ",
+   "kunyomi": "つの(る)",
+   "meaning": "recruit",
+   "example": "募集 (ぼしゅう) — recruitment",
+   "strokes": 12
+  },
+  {
+   "kanji": "項",
+   "onyomi": "コウ",
+   "kunyomi": "-",
+   "meaning": "item, clause",
+   "example": "項目 (こうもく) — item",
+   "strokes": 12
+  },
+  {
+   "kanji": "徴",
+   "onyomi": "チョウ",
+   "kunyomi": "-",
+   "meaning": "sign, collect",
+   "example": "特徴 (とくちょう) — characteristic",
+   "strokes": 14
+  },
+  {
+   "kanji": "抑",
+   "onyomi": "ヨク",
+   "kunyomi": "おさ(える)",
+   "meaning": "suppress",
+   "example": "抑制 (よくせい) — restraint",
+   "strokes": 7
+  },
+  {
+   "kanji": "誇",
+   "onyomi": "コ",
+   "kunyomi": "ほこ(る)",
+   "meaning": "pride, boast",
+   "example": "誇り (ほこり) — pride",
+   "strokes": 13
+  },
+  {
+   "kanji": "澄",
+   "onyomi": "チョウ",
+   "kunyomi": "す(む)",
+   "meaning": "clear, lucid",
+   "example": "澄む (すむ) — to become clear",
+   "strokes": 15
+  },
+  {
+   "kanji": "称",
+   "onyomi": "ショウ",
+   "kunyomi": "-",
+   "meaning": "title, praise",
+   "example": "名称 (めいしょう) — name, title",
+   "strokes": 10
+  },
+  {
+   "kanji": "免",
+   "onyomi": "メン",
+   "kunyomi": "まぬか(れる)",
+   "meaning": "exempt, escape",
+   "example": "免許 (めんきょ) — license",
+   "strokes": 8
+  },
+  {
+   "kanji": "許",
+   "onyomi": "キョ",
+   "kunyomi": "ゆる(す)",
+   "meaning": "permit, forgive",
+   "example": "許可 (きょか) — permission",
+   "strokes": 11
+  },
+  {
+   "kanji": "況",
+   "onyomi": "キョウ",
+   "kunyomi": "-",
+   "meaning": "circumstances",
+   "example": "状況 (じょうきょう) — situation",
+   "strokes": 8
+  },
+  {
+   "kanji": "状",
+   "onyomi": "ジョウ",
+   "kunyomi": "-",
+   "meaning": "condition, letter",
+   "example": "状態 (じょうたい) — state",
+   "strokes": 7
+  },
+  {
+   "kanji": "越",
+   "onyomi": "エツ",
+   "kunyomi": "こ(える)",
+   "meaning": "cross over, exceed",
+   "example": "引っ越し (ひっこし) — moving house",
+   "strokes": 12
+  },
+  {
+   "kanji": "燥",
+   "onyomi": "ソウ",
+   "kunyomi": "-",
+   "meaning": "dry up",
+   "example": "乾燥 (かんそう) — dryness",
+   "strokes": 17
+  }
+ ],
+ "N1": [
+  {
+   "kanji": "曖",
+   "onyomi": "アイ",
+   "kunyomi": "—",
+   "meaning": "dim, unclear",
+   "example": "曖昧 (あいまい) — vague",
+   "strokes": 17
+  },
+  {
+   "kanji": "尊",
+   "onyomi": "ソン",
+   "kunyomi": "とうと(い)",
+   "meaning": "revere, noble",
+   "example": "尊敬 (そんけい) — respect",
+   "strokes": 12
+  },
+  {
+   "kanji": "昧",
+   "onyomi": "マイ",
+   "kunyomi": "-",
+   "meaning": "dark, foolish",
+   "example": "三昧 (ざんまい) — absorption",
+   "strokes": 9
+  },
+  {
+   "kanji": "礎",
+   "onyomi": "ソ",
+   "kunyomi": "いしずえ",
+   "meaning": "cornerstone",
+   "example": "基礎 (きそ) — foundation",
+   "strokes": 18
+  },
+  {
+   "kanji": "穫",
+   "onyomi": "カク",
+   "kunyomi": "-",
+   "meaning": "harvest",
+   "example": "収穫 (しゅうかく) — harvest",
+   "strokes": 18
+  },
+  {
+   "kanji": "憂",
+   "onyomi": "ユウ",
+   "kunyomi": "うれ(える)",
+   "meaning": "grief, anxiety",
+   "example": "憂慮 (ゆうりょ) — concern",
+   "strokes": 15
+  },
+  {
+   "kanji": "慮",
+   "onyomi": "リョ",
+   "kunyomi": "-",
+   "meaning": "consider",
+   "example": "考慮 (こうりょ) — consideration",
+   "strokes": 15
+  },
+  {
+   "kanji": "擁",
+   "onyomi": "ヨウ",
+   "kunyomi": "-",
+   "meaning": "embrace, protect",
+   "example": "擁護 (ようご) — advocacy",
+   "strokes": 16
+  },
+  {
+   "kanji": "脆",
+   "onyomi": "ゼイ",
+   "kunyomi": "もろ(い)",
+   "meaning": "fragile",
+   "example": "脆弱 (ぜいじゃく) — fragile",
+   "strokes": 10
+  },
+  {
+   "kanji": "葛",
+   "onyomi": "カツ",
+   "kunyomi": "くず",
+   "meaning": "kudzu vine",
+   "example": "葛藤 (かっとう) — conflict",
+   "strokes": 11
+  },
+  {
+   "kanji": "藤",
+   "onyomi": "トウ",
+   "kunyomi": "ふじ",
+   "meaning": "wisteria",
+   "example": "葛藤 (かっとう) — conflict",
+   "strokes": 18
+  },
+  {
+   "kanji": "緩",
+   "onyomi": "カン",
+   "kunyomi": "ゆる(い)",
+   "meaning": "loose, slow",
+   "example": "緩和 (かんわ) — easing",
+   "strokes": 15
+  },
+  {
+   "kanji": "惧",
+   "onyomi": "グ",
+   "kunyomi": "-",
+   "meaning": "fear",
+   "example": "危惧 (きぐ) — apprehension",
+   "strokes": 11
+  },
+  {
+   "kanji": "顕",
+   "onyomi": "ケン",
+   "kunyomi": "-",
+   "meaning": "manifest, clear",
+   "example": "顕著 (けんちょ) — remarkable",
+   "strokes": 18
+  },
+  {
+   "kanji": "洞",
+   "onyomi": "ドウ",
+   "kunyomi": "ほら",
+   "meaning": "cave; insight",
+   "example": "洞察 (どうさつ) — insight",
+   "strokes": 9
+  },
+  {
+   "kanji": "遂",
+   "onyomi": "スイ",
+   "kunyomi": "と(げる)",
+   "meaning": "accomplish",
+   "example": "遂行 (すいこう) — execution",
+   "strokes": 12
+  },
+  {
+   "kanji": "堕",
+   "onyomi": "ダ",
+   "kunyomi": "-",
+   "meaning": "fall, degenerate",
+   "example": "堕落 (だらく) — corruption",
+   "strokes": 12
+  },
+  {
+   "kanji": "陳",
+   "onyomi": "チン",
+   "kunyomi": "-",
+   "meaning": "state, exhibit",
+   "example": "陳腐 (ちんぷ) — stale, cliche",
+   "strokes": 11
+  },
+  {
+   "kanji": "襲",
+   "onyomi": "シュウ",
+   "kunyomi": "おそ(う)",
+   "meaning": "attack; inherit",
+   "example": "踏襲 (とうしゅう) — following precedent",
+   "strokes": 22
+  },
+  {
+   "kanji": "漠",
+   "onyomi": "バク",
+   "kunyomi": "-",
+   "meaning": "vague, desert",
+   "example": "漠然 (ばくぜん) — vague",
+   "strokes": 13
+  },
+  {
+   "kanji": "膨",
+   "onyomi": "ボウ",
+   "kunyomi": "ふく(らむ)",
+   "meaning": "swell, expand",
+   "example": "膨大 (ぼうだい) — enormous",
+   "strokes": 16
+  },
+  {
+   "kanji": "喫",
+   "onyomi": "キツ",
+   "kunyomi": "-",
+   "meaning": "consume, eat",
+   "example": "満喫 (まんきつ) — fully enjoy",
+   "strokes": 12
+  },
+  {
+   "kanji": "如",
+   "onyomi": "ジョ、ニョ",
+   "kunyomi": "ごと(し)",
+   "meaning": "like, as if",
+   "example": "如実 (にょじつ) — vividly",
+   "strokes": 6
+  },
+  {
+   "kanji": "諭",
+   "onyomi": "ユ",
+   "kunyomi": "さと(す)",
+   "meaning": "admonish",
+   "example": "教諭 (きょうゆ) — teacher",
+   "strokes": 16
+  },
+  {
+   "kanji": "衡",
+   "onyomi": "コウ",
+   "kunyomi": "-",
+   "meaning": "balance",
+   "example": "均衡 (きんこう) — equilibrium",
+   "strokes": 16
+  },
+  {
+   "kanji": "戴",
+   "onyomi": "タイ",
+   "kunyomi": "いただ(く)",
+   "meaning": "receive humbly",
+   "example": "頂戴 (ちょうだい) — receiving",
+   "strokes": 17
+  },
+  {
+   "kanji": "麗",
+   "onyomi": "レイ",
+   "kunyomi": "うるわ(しい)",
+   "meaning": "lovely, beautiful",
+   "example": "綺麗 (きれい) — pretty, clean",
+   "strokes": 19
+  },
+  {
+   "kanji": "疎",
+   "onyomi": "ソ",
+   "kunyomi": "うと(い)",
+   "meaning": "estranged, sparse",
+   "example": "疎遠 (そえん) — estrangement",
+   "strokes": 12
+  },
+  {
+   "kanji": "賄",
+   "onyomi": "ワイ",
+   "kunyomi": "まかな(う)",
+   "meaning": "bribe; provide",
+   "example": "賄賂 (わいろ) — bribe",
+   "strokes": 13
+  },
+  {
+   "kanji": "頻",
+   "onyomi": "ヒン",
+   "kunyomi": "-",
+   "meaning": "frequent",
+   "example": "頻度 (ひんど) — frequency",
+   "strokes": 17
+  }
+ ]
+}

@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}Typing Dash{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>⌨️ Typing Dash</h1>
+  <p>Type the romaji for what you see (and hear). 60 seconds on the clock — how many can you clear?</p>
+</div>
+
+<div id="tdSetup">
+  <div class="chip-row" aria-label="Challenge type">
+    <button class="chip active" data-type="kana">Kana sprint</button>
+    <button class="chip" data-type="vocab">Vocabulary</button>
+  </div>
+  <div class="chip-row" id="tdScriptRow" aria-label="Script">
+    <button class="chip active" data-script="hiragana">Hiragana</button>
+    <button class="chip" data-script="katakana">Katakana</button>
+  </div>
+  <div class="chip-row" id="tdLevelRow" style="display:none" aria-label="Level">
+    {% for lvl in levels %}
+    <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }}</button>
+    {% endfor %}
+  </div>
+  <button class="btn" id="tdStart">🏁 Start 60s dash</button>
+</div>
+
+<div id="tdPlay" style="display:none" class="game-shell">
+  <div class="hud">
+    <span class="pill" id="tdScore">Cleared: 0</span>
+    <div class="progress-track"><div class="progress-fill" id="tdBar" style="background:linear-gradient(90deg,#F59E0B,#EF4444)"></div></div>
+    <span class="pill" id="tdClock">60s</span>
+  </div>
+  <div class="card" style="text-align:center">
+    <div class="prompt-big jp" id="tdShow">…</div>
+    <p class="prompt-sub" id="tdHint"></p>
+    <input class="type-input" id="tdInput" type="text" autocomplete="off" autocapitalize="off"
+           spellcheck="false" placeholder="type romaji + Enter" aria-label="Type the romaji reading">
+    <p style="color:var(--muted);font-size:.85rem;margin-top:10px">Press <b>Enter</b> to submit · <b>Esc</b> to skip (–1)</p>
+  </div>
+</div>
+
+<div id="tdResult" style="display:none" class="game-shell">
+  <div class="card result-panel">
+    <div class="big-score" id="tdFinal">0</div>
+    <p id="tdMsg"></p>
+    <button class="btn" id="tdAgain">Run it back</button>
+    <button class="btn ghost" id="tdChange">Change settings</button>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  let type = "kana", script = "hiragana", level = "N5";
+  let items = [], idx = 0, cleared = 0, misses = 0, timeLeft = 60, clock = null;
+  const DUR = 60;
+
+  document.querySelectorAll(".chip[data-type]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); type = c.dataset.type;
+    document.querySelectorAll(".chip[data-type]").forEach(x => x.classList.toggle("active", x === c));
+    document.getElementById("tdScriptRow").style.display = type === "kana" ? "" : "none";
+    document.getElementById("tdLevelRow").style.display = type === "vocab" ? "" : "none";
+  }));
+  document.querySelectorAll(".chip[data-script]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); script = c.dataset.script;
+    document.querySelectorAll(".chip[data-script]").forEach(x => x.classList.toggle("active", x === c));
+  }));
+  document.querySelectorAll(".chip[data-level]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); level = c.dataset.level;
+    document.querySelectorAll(".chip[data-level]").forEach(x => x.classList.toggle("active", x === c));
+  }));
+
+  const views = { setup: tdSetup, play: tdPlay, result: tdResult };
+  function show(v) { Object.entries(views).forEach(([k, el]) => el.style.display = k === v ? "" : "none"); }
+
+  async function fetchItems() {
+    const r = await fetch(`/api/typing?type=${type}&script=${script}&level=${level}&count=40`);
+    items = (await r.json()).items;
+  }
+
+  function renderItem() {
+    if (idx >= items.length) idx = 0;
+    const it = items[idx];
+    document.getElementById("tdShow").textContent = it.show;
+    document.getElementById("tdHint").textContent = it.hint ? `hint: ${it.hint}` : "";
+    const inp = document.getElementById("tdInput");
+    inp.value = ""; inp.className = "type-input"; inp.focus();
+    NQ.speak(it.speak, 1.0);
+  }
+
+  function tick() {
+    timeLeft--;
+    document.getElementById("tdClock").textContent = `${timeLeft}s`;
+    document.getElementById("tdBar").style.width = `${(timeLeft / DUR) * 100}%`;
+    if (timeLeft <= 0) finish();
+  }
+
+  async function start() {
+    NQ.sfx.click();
+    await fetchItems();
+    idx = 0; cleared = 0; misses = 0; timeLeft = DUR;
+    document.getElementById("tdScore").textContent = "Cleared: 0";
+    document.getElementById("tdClock").textContent = `${DUR}s`;
+    document.getElementById("tdBar").style.width = "100%";
+    show("play");
+    renderItem();
+    clearInterval(clock);
+    clock = setInterval(tick, 1000);
+  }
+
+  function submit() {
+    const inp = document.getElementById("tdInput");
+    const val = inp.value.trim().toLowerCase();
+    if (!val) return;
+    const it = items[idx];
+    if (it.accept.includes(val)) {
+      cleared++;
+      inp.classList.add("good");
+      NQ.sfx.correct();
+      NQ.addXP(6, "typing");
+      document.getElementById("tdScore").textContent = `Cleared: ${cleared}`;
+      idx++;
+      setTimeout(renderItem, 250);
+    } else {
+      misses++;
+      inp.classList.add("bad");
+      NQ.sfx.wrong();
+      setTimeout(() => { inp.className = "type-input"; inp.select(); }, 350);
+    }
+  }
+
+  function skip() {
+    NQ.sfx.wrong();
+    misses++;
+    NQ.toast(`It was "${items[idx].accept[0]}"`);
+    idx++;
+    renderItem();
+  }
+
+  function finish() {
+    clearInterval(clock);
+    show("result");
+    document.getElementById("tdFinal").textContent = cleared;
+    const acc = cleared + misses ? Math.round((cleared / (cleared + misses)) * 100) : 0;
+    document.getElementById("tdMsg").textContent = `${cleared} cleared · ${acc}% accuracy`;
+    if (cleared >= 20) { NQ.confetti(); NQ.sfx.fanfare(); NQ.addXP(40, "typing"); }
+    else if (cleared >= 10) { NQ.confetti(50); NQ.sfx.fanfare(); NQ.addXP(20, "typing"); }
+  }
+
+  document.getElementById("tdInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") submit();
+    if (e.key === "Escape") skip();
+  });
+  document.getElementById("tdStart").addEventListener("click", start);
+  document.getElementById("tdAgain").addEventListener("click", start);
+  document.getElementById("tdChange").addEventListener("click", () => { NQ.sfx.click(); show("setup"); });
+})();
+</script>
+{% endblock %}

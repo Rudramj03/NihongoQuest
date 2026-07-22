@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}Listening Lab{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>🎧 Listening Lab</h1>
+  <p>Press play, listen carefully, then pick the word you heard. Replay as often as you like — slow mode included.</p>
+</div>
+
+<div id="llSetup">
+  <div class="chip-row" aria-label="Level">
+    {% for lvl in levels %}
+    <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }}</button>
+    {% endfor %}
+  </div>
+  <button class="btn" id="llStart">🎧 Start listening round</button>
+</div>
+
+<div id="llPlay" style="display:none" class="game-shell">
+  <div class="hud">
+    <span class="pill" id="llScore">Score: 0</span>
+    <div class="progress-track"><div class="progress-fill" id="llBar"></div></div>
+    <span class="pill" id="llCount">1/10</span>
+  </div>
+  <div class="card" style="text-align:center">
+    <div style="display:flex;justify-content:center;gap:12px;margin:6px 0 22px;flex-wrap:wrap">
+      <button class="speak-btn" id="llReplay" style="font-size:1.1rem;padding:14px 30px">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Play word
+      </button>
+      <button class="speak-btn" id="llSlow">🐢 Slow</button>
+    </div>
+    <p class="prompt-sub">What did you hear?</p>
+    <div class="option-grid" id="llOptions"></div>
+    <div class="explain-box" id="llExplain" style="display:none"></div>
+  </div>
+</div>
+
+<div id="llResult" style="display:none" class="game-shell">
+  <div class="card result-panel">
+    <div class="big-score" id="llFinal">0/10</div>
+    <p id="llMsg"></p>
+    <button class="btn" id="llAgain">Another round</button>
+    <button class="btn ghost" id="llChange">Change level</button>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  let level = "N5", rounds = [], idx = 0, score = 0;
+
+  document.querySelectorAll(".chip[data-level]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click(); level = c.dataset.level;
+    document.querySelectorAll(".chip[data-level]").forEach(x => x.classList.toggle("active", x === c));
+  }));
+
+  const views = { setup: llSetup, play: llPlay, result: llResult };
+  function show(v) { Object.entries(views).forEach(([k, el]) => el.style.display = k === v ? "" : "none"); }
+
+  async function start() {
+    NQ.sfx.click();
+    const r = await fetch(`/api/listening?level=${level}&count=10`);
+    rounds = (await r.json()).rounds;
+    idx = 0; score = 0;
+    document.getElementById("llScore").textContent = "Score: 0";
+    show("play");
+    render();
+  }
+
+  function render() {
+    const q = rounds[idx];
+    document.getElementById("llCount").textContent = `${idx + 1}/${rounds.length}`;
+    document.getElementById("llBar").style.width = `${(idx / rounds.length) * 100}%`;
+    document.getElementById("llExplain").style.display = "none";
+    document.getElementById("llReplay").onclick = () => NQ.speak(q.speak, 0.9);
+    document.getElementById("llSlow").onclick = () => NQ.speak(q.speak, 0.55);
+    setTimeout(() => NQ.speak(q.speak, 0.9), 350);
+
+    const box = document.getElementById("llOptions");
+    box.innerHTML = "";
+    q.options.forEach(opt => {
+      const b = document.createElement("button");
+      b.className = "option-btn jp";
+      b.innerHTML = `<div>${opt.word}</div><div style="font-size:.8rem;font-weight:600;color:inherit;opacity:.75">${opt.meaning}</div>`;
+      b.addEventListener("click", () => pick(b, opt, q));
+      box.appendChild(b);
+    });
+  }
+
+  function pick(btn, opt, q) {
+    document.querySelectorAll("#llOptions .option-btn").forEach(b => b.disabled = true);
+    if (opt.word === q.answer) {
+      btn.classList.add("correct");
+      NQ.sfx.correct();
+      score++;
+      NQ.addXP(12, "listening");
+      document.getElementById("llScore").textContent = `Score: ${score}`;
+    } else {
+      btn.classList.add("wrong");
+      NQ.sfx.wrong();
+      document.querySelectorAll("#llOptions .option-btn").forEach(b => {
+        if (b.firstChild.textContent === q.answer) b.classList.add("correct");
+      });
+    }
+    const ex = document.getElementById("llExplain");
+    ex.textContent = q.explain;
+    ex.style.display = "";
+    setTimeout(() => { idx++; idx < rounds.length ? render() : finish(); }, 1500);
+  }
+
+  function finish() {
+    show("result");
+    document.getElementById("llFinal").textContent = `${score}/${rounds.length}`;
+    const pct = score / rounds.length;
+    let msg;
+    if (pct === 1) { msg = "Golden ears! 完璧！ +40 XP bonus"; NQ.confetti(); NQ.sfx.fanfare(); NQ.addXP(40, "listening"); }
+    else if (pct >= .7) { msg = "Sharp listening! いいね！"; NQ.confetti(50); NQ.sfx.fanfare(); }
+    else { msg = "Ears need reps — replay words in slow mode!"; }
+    document.getElementById("llMsg").textContent = msg;
+  }
+
+  document.getElementById("llStart").addEventListener("click", start);
+  document.getElementById("llAgain").addEventListener("click", start);
+  document.getElementById("llChange").addEventListener("click", () => { NQ.sfx.click(); show("setup"); });
+})();
+</script>
+{% endblock %}

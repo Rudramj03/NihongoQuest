@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Kanji Explorer{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>🈷 Kanji Explorer</h1>
+  <p>Tap a kanji to see its readings, meaning and an example word — then hear it spoken.</p>
+</div>
+
+<div class="chip-row" aria-label="Level">
+  {% for lvl in levels %}
+  <button class="chip lv-{{ lvl }} {% if lvl == 'N5' %}active{% endif %}" data-level="{{ lvl }}">{{ lvl }} ({{ kanji[lvl]|length }})</button>
+  {% endfor %}
+</div>
+
+{% for lvl, items in kanji.items() %}
+<div class="kanji-grid" data-level-grid="{{ lvl }}" {% if lvl != 'N5' %}style="display:none"{% endif %}>
+  {% for k in items %}
+  <div class="kanji-card" role="button" tabindex="0"
+       data-kanji="{{ k.kanji }}" data-on="{{ k.onyomi }}" data-kun="{{ k.kunyomi }}"
+       data-meaning="{{ k.meaning }}" data-example="{{ k.example }}" data-strokes="{{ k.strokes }}">
+    <div class="kj">{{ k.kanji }}</div>
+    <div class="mn">{{ k.meaning }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+
+<div class="modal-backdrop" id="kanjiModal" role="dialog" aria-modal="true" aria-label="Kanji details">
+  <div class="modal">
+    <button class="close-x" id="kmClose" aria-label="Close">✕</button>
+    <div class="big-kanji" id="kmKanji">日</div>
+    <div style="text-align:center;margin:10px 0">
+      <button class="speak-btn" id="kmSpeak">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Hear example
+      </button>
+    </div>
+    <dl>
+      <dt>Meaning</dt><dd id="kmMeaning"></dd>
+      <dt>On'yomi</dt><dd id="kmOn"></dd>
+      <dt>Kun'yomi</dt><dd id="kmKun"></dd>
+      <dt>Strokes</dt><dd id="kmStrokes"></dd>
+      <dt>Example</dt><dd id="kmExample"></dd>
+    </dl>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  document.querySelectorAll(".chip[data-level]").forEach(c => c.addEventListener("click", () => {
+    NQ.sfx.click();
+    document.querySelectorAll(".chip[data-level]").forEach(x => x.classList.toggle("active", x === c));
+    document.querySelectorAll("[data-level-grid]").forEach(g =>
+      g.style.display = g.dataset.levelGrid === c.dataset.level ? "" : "none");
+  }));
+
+  const modal = document.getElementById("kanjiModal");
+  let currentExample = "";
+
+  document.querySelectorAll(".kanji-card").forEach(card => {
+    const open = () => {
+      NQ.sfx.flip();
+      document.getElementById("kmKanji").textContent = card.dataset.kanji;
+      document.getElementById("kmMeaning").textContent = card.dataset.meaning;
+      document.getElementById("kmOn").textContent = card.dataset.on || "—";
+      document.getElementById("kmKun").textContent = card.dataset.kun || "—";
+      document.getElementById("kmStrokes").textContent = card.dataset.strokes;
+      document.getElementById("kmExample").textContent = card.dataset.example;
+      currentExample = card.dataset.example.split(" ")[0];
+      modal.classList.add("open");
+      NQ.speak(card.dataset.kanji);
+    };
+    card.addEventListener("click", open);
+    card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+  });
+
+  document.getElementById("kmSpeak").addEventListener("click", () => NQ.speak(currentExample));
+  document.getElementById("kmClose").addEventListener("click", () => modal.classList.remove("open"));
+  modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("open"); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") modal.classList.remove("open"); });
+})();
+</script>
+{% endblock %}

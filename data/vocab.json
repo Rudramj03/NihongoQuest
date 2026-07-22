@@ -1,0 +1,1992 @@
+{
+ "N5": [
+  {
+   "word": "私",
+   "kana": "わたし",
+   "romaji": "watashi",
+   "meaning": "I, me"
+  },
+  {
+   "word": "水",
+   "kana": "みず",
+   "romaji": "mizu",
+   "meaning": "water"
+  },
+  {
+   "word": "食べる",
+   "kana": "たべる",
+   "romaji": "taberu",
+   "meaning": "to eat"
+  },
+  {
+   "word": "飲む",
+   "kana": "のむ",
+   "romaji": "nomu",
+   "meaning": "to drink"
+  },
+  {
+   "word": "行く",
+   "kana": "いく",
+   "romaji": "iku",
+   "meaning": "to go"
+  },
+  {
+   "word": "来る",
+   "kana": "くる",
+   "romaji": "kuru",
+   "meaning": "to come"
+  },
+  {
+   "word": "見る",
+   "kana": "みる",
+   "romaji": "miru",
+   "meaning": "to see, to watch"
+  },
+  {
+   "word": "学校",
+   "kana": "がっこう",
+   "romaji": "gakkou",
+   "meaning": "school"
+  },
+  {
+   "word": "先生",
+   "kana": "せんせい",
+   "romaji": "sensei",
+   "meaning": "teacher"
+  },
+  {
+   "word": "学生",
+   "kana": "がくせい",
+   "romaji": "gakusei",
+   "meaning": "student"
+  },
+  {
+   "word": "友達",
+   "kana": "ともだち",
+   "romaji": "tomodachi",
+   "meaning": "friend"
+  },
+  {
+   "word": "家",
+   "kana": "いえ",
+   "romaji": "ie",
+   "meaning": "house, home"
+  },
+  {
+   "word": "車",
+   "kana": "くるま",
+   "romaji": "kuruma",
+   "meaning": "car"
+  },
+  {
+   "word": "電車",
+   "kana": "でんしゃ",
+   "romaji": "densha",
+   "meaning": "train"
+  },
+  {
+   "word": "本",
+   "kana": "ほん",
+   "romaji": "hon",
+   "meaning": "book"
+  },
+  {
+   "word": "犬",
+   "kana": "いぬ",
+   "romaji": "inu",
+   "meaning": "dog"
+  },
+  {
+   "word": "猫",
+   "kana": "ねこ",
+   "romaji": "neko",
+   "meaning": "cat"
+  },
+  {
+   "word": "大きい",
+   "kana": "おおきい",
+   "romaji": "ookii",
+   "meaning": "big"
+  },
+  {
+   "word": "小さい",
+   "kana": "ちいさい",
+   "romaji": "chiisai",
+   "meaning": "small"
+  },
+  {
+   "word": "新しい",
+   "kana": "あたらしい",
+   "romaji": "atarashii",
+   "meaning": "new"
+  },
+  {
+   "word": "古い",
+   "kana": "ふるい",
+   "romaji": "furui",
+   "meaning": "old (things)"
+  },
+  {
+   "word": "高い",
+   "kana": "たかい",
+   "romaji": "takai",
+   "meaning": "tall, expensive"
+  },
+  {
+   "word": "安い",
+   "kana": "やすい",
+   "romaji": "yasui",
+   "meaning": "cheap"
+  },
+  {
+   "word": "今日",
+   "kana": "きょう",
+   "romaji": "kyou",
+   "meaning": "today"
+  },
+  {
+   "word": "明日",
+   "kana": "あした",
+   "romaji": "ashita",
+   "meaning": "tomorrow"
+  },
+  {
+   "word": "昨日",
+   "kana": "きのう",
+   "romaji": "kinou",
+   "meaning": "yesterday"
+  },
+  {
+   "word": "時間",
+   "kana": "じかん",
+   "romaji": "jikan",
+   "meaning": "time, hour"
+  },
+  {
+   "word": "お金",
+   "kana": "おかね",
+   "romaji": "okane",
+   "meaning": "money"
+  },
+  {
+   "word": "仕事",
+   "kana": "しごと",
+   "romaji": "shigoto",
+   "meaning": "work, job"
+  },
+  {
+   "word": "日本語",
+   "kana": "にほんご",
+   "romaji": "nihongo",
+   "meaning": "Japanese language"
+  },
+  {
+   "word": "英語",
+   "kana": "えいご",
+   "romaji": "eigo",
+   "meaning": "English language"
+  },
+  {
+   "word": "朝ご飯",
+   "kana": "あさごはん",
+   "romaji": "asagohan",
+   "meaning": "breakfast"
+  },
+  {
+   "word": "駅",
+   "kana": "えき",
+   "romaji": "eki",
+   "meaning": "station"
+  },
+  {
+   "word": "買う",
+   "kana": "かう",
+   "romaji": "kau",
+   "meaning": "to buy"
+  },
+  {
+   "word": "話す",
+   "kana": "はなす",
+   "romaji": "hanasu",
+   "meaning": "to speak"
+  },
+  {
+   "word": "聞く",
+   "kana": "きく",
+   "romaji": "kiku",
+   "meaning": "to listen, to ask"
+  },
+  {
+   "word": "読む",
+   "kana": "よむ",
+   "romaji": "yomu",
+   "meaning": "to read"
+  },
+  {
+   "word": "書く",
+   "kana": "かく",
+   "romaji": "kaku",
+   "meaning": "to write"
+  },
+  {
+   "word": "元気",
+   "kana": "げんき",
+   "romaji": "genki",
+   "meaning": "healthy, energetic"
+  },
+  {
+   "word": "好き",
+   "kana": "すき",
+   "romaji": "suki",
+   "meaning": "to like"
+  },
+  {
+   "word": "お茶",
+   "kana": "おちゃ",
+   "romaji": "ocha",
+   "meaning": "tea"
+  },
+  {
+   "word": "魚",
+   "kana": "さかな",
+   "romaji": "sakana",
+   "meaning": "fish"
+  },
+  {
+   "word": "鳥",
+   "kana": "とり",
+   "romaji": "tori",
+   "meaning": "bird"
+  },
+  {
+   "word": "空",
+   "kana": "そら",
+   "romaji": "sora",
+   "meaning": "sky"
+  },
+  {
+   "word": "海",
+   "kana": "うみ",
+   "romaji": "umi",
+   "meaning": "sea"
+  },
+  {
+   "word": "雨",
+   "kana": "あめ",
+   "romaji": "ame",
+   "meaning": "rain"
+  },
+  {
+   "word": "雪",
+   "kana": "ゆき",
+   "romaji": "yuki",
+   "meaning": "snow"
+  },
+  {
+   "word": "天気",
+   "kana": "てんき",
+   "romaji": "tenki",
+   "meaning": "weather"
+  },
+  {
+   "word": "名前",
+   "kana": "なまえ",
+   "romaji": "namae",
+   "meaning": "name"
+  },
+  {
+   "word": "国",
+   "kana": "くに",
+   "romaji": "kuni",
+   "meaning": "country"
+  },
+  {
+   "word": "部屋",
+   "kana": "へや",
+   "romaji": "heya",
+   "meaning": "room"
+  },
+  {
+   "word": "椅子",
+   "kana": "いす",
+   "romaji": "isu",
+   "meaning": "chair"
+  },
+  {
+   "word": "机",
+   "kana": "つくえ",
+   "romaji": "tsukue",
+   "meaning": "desk"
+  },
+  {
+   "word": "窓",
+   "kana": "まど",
+   "romaji": "mado",
+   "meaning": "window"
+  },
+  {
+   "word": "会う",
+   "kana": "あう",
+   "romaji": "au",
+   "meaning": "to meet"
+  },
+  {
+   "word": "立つ",
+   "kana": "たつ",
+   "romaji": "tatsu",
+   "meaning": "to stand"
+  },
+  {
+   "word": "座る",
+   "kana": "すわる",
+   "romaji": "suwaru",
+   "meaning": "to sit"
+  },
+  {
+   "word": "寝る",
+   "kana": "ねる",
+   "romaji": "neru",
+   "meaning": "to sleep"
+  },
+  {
+   "word": "起きる",
+   "kana": "おきる",
+   "romaji": "okiru",
+   "meaning": "to wake up"
+  },
+  {
+   "word": "休む",
+   "kana": "やすむ",
+   "romaji": "yasumu",
+   "meaning": "to rest"
+  },
+  {
+   "word": "歩く",
+   "kana": "あるく",
+   "romaji": "aruku",
+   "meaning": "to walk"
+  },
+  {
+   "word": "走る",
+   "kana": "はしる",
+   "romaji": "hashiru",
+   "meaning": "to run"
+  },
+  {
+   "word": "泳ぐ",
+   "kana": "およぐ",
+   "romaji": "oyogu",
+   "meaning": "to swim"
+  },
+  {
+   "word": "歌う",
+   "kana": "うたう",
+   "romaji": "utau",
+   "meaning": "to sing"
+  },
+  {
+   "word": "白い",
+   "kana": "しろい",
+   "romaji": "shiroi",
+   "meaning": "white"
+  },
+  {
+   "word": "黒い",
+   "kana": "くろい",
+   "romaji": "kuroi",
+   "meaning": "black"
+  },
+  {
+   "word": "赤い",
+   "kana": "あかい",
+   "romaji": "akai",
+   "meaning": "red"
+  },
+  {
+   "word": "青い",
+   "kana": "あおい",
+   "romaji": "aoi",
+   "meaning": "blue"
+  },
+  {
+   "word": "暑い",
+   "kana": "あつい",
+   "romaji": "atsui",
+   "meaning": "hot (weather)"
+  },
+  {
+   "word": "寒い",
+   "kana": "さむい",
+   "romaji": "samui",
+   "meaning": "cold (weather)"
+  }
+ ],
+ "N4": [
+  {
+   "word": "経験",
+   "kana": "けいけん",
+   "romaji": "keiken",
+   "meaning": "experience"
+  },
+  {
+   "word": "予定",
+   "kana": "よてい",
+   "romaji": "yotei",
+   "meaning": "plan, schedule"
+  },
+  {
+   "word": "準備",
+   "kana": "じゅんび",
+   "romaji": "junbi",
+   "meaning": "preparation"
+  },
+  {
+   "word": "急ぐ",
+   "kana": "いそぐ",
+   "romaji": "isogu",
+   "meaning": "to hurry"
+  },
+  {
+   "word": "届ける",
+   "kana": "とどける",
+   "romaji": "todokeru",
+   "meaning": "to deliver"
+  },
+  {
+   "word": "決める",
+   "kana": "きめる",
+   "romaji": "kimeru",
+   "meaning": "to decide"
+  },
+  {
+   "word": "続ける",
+   "kana": "つづける",
+   "romaji": "tsuzukeru",
+   "meaning": "to continue"
+  },
+  {
+   "word": "忘れる",
+   "kana": "わすれる",
+   "romaji": "wasureru",
+   "meaning": "to forget"
+  },
+  {
+   "word": "覚える",
+   "kana": "おぼえる",
+   "romaji": "oboeru",
+   "meaning": "to memorize"
+  },
+  {
+   "word": "調べる",
+   "kana": "しらべる",
+   "romaji": "shiraberu",
+   "meaning": "to investigate, to look up"
+  },
+  {
+   "word": "文化",
+   "kana": "ぶんか",
+   "romaji": "bunka",
+   "meaning": "culture"
+  },
+  {
+   "word": "社会",
+   "kana": "しゃかい",
+   "romaji": "shakai",
+   "meaning": "society"
+  },
+  {
+   "word": "世界",
+   "kana": "せかい",
+   "romaji": "sekai",
+   "meaning": "world"
+  },
+  {
+   "word": "景色",
+   "kana": "けしき",
+   "romaji": "keshiki",
+   "meaning": "scenery"
+  },
+  {
+   "word": "会議",
+   "kana": "かいぎ",
+   "romaji": "kaigi",
+   "meaning": "meeting"
+  },
+  {
+   "word": "連絡",
+   "kana": "れんらく",
+   "romaji": "renraku",
+   "meaning": "contact, communication"
+  },
+  {
+   "word": "約束",
+   "kana": "やくそく",
+   "romaji": "yakusoku",
+   "meaning": "promise"
+  },
+  {
+   "word": "安全",
+   "kana": "あんぜん",
+   "romaji": "anzen",
+   "meaning": "safety"
+  },
+  {
+   "word": "危険",
+   "kana": "きけん",
+   "romaji": "kiken",
+   "meaning": "danger"
+  },
+  {
+   "word": "複雑",
+   "kana": "ふくざつ",
+   "romaji": "fukuzatsu",
+   "meaning": "complicated"
+  },
+  {
+   "word": "簡単",
+   "kana": "かんたん",
+   "romaji": "kantan",
+   "meaning": "simple, easy"
+  },
+  {
+   "word": "特別",
+   "kana": "とくべつ",
+   "romaji": "tokubetsu",
+   "meaning": "special"
+  },
+  {
+   "word": "普通",
+   "kana": "ふつう",
+   "romaji": "futsuu",
+   "meaning": "normal, ordinary"
+  },
+  {
+   "word": "最近",
+   "kana": "さいきん",
+   "romaji": "saikin",
+   "meaning": "recently"
+  },
+  {
+   "word": "将来",
+   "kana": "しょうらい",
+   "romaji": "shourai",
+   "meaning": "future"
+  },
+  {
+   "word": "趣味",
+   "kana": "しゅみ",
+   "romaji": "shumi",
+   "meaning": "hobby"
+  },
+  {
+   "word": "習慣",
+   "kana": "しゅうかん",
+   "romaji": "shuukan",
+   "meaning": "habit, custom"
+  },
+  {
+   "word": "説明",
+   "kana": "せつめい",
+   "romaji": "setsumei",
+   "meaning": "explanation"
+  },
+  {
+   "word": "紹介",
+   "kana": "しょうかい",
+   "romaji": "shoukai",
+   "meaning": "introduction"
+  },
+  {
+   "word": "招待",
+   "kana": "しょうたい",
+   "romaji": "shoutai",
+   "meaning": "invitation"
+  },
+  {
+   "word": "故障",
+   "kana": "こしょう",
+   "romaji": "koshou",
+   "meaning": "breakdown, malfunction"
+  },
+  {
+   "word": "遅刻",
+   "kana": "ちこく",
+   "romaji": "chikoku",
+   "meaning": "being late"
+  },
+  {
+   "word": "翻訳",
+   "kana": "ほんやく",
+   "romaji": "honyaku",
+   "meaning": "translation"
+  },
+  {
+   "word": "経済",
+   "kana": "けいざい",
+   "romaji": "keizai",
+   "meaning": "economy"
+  },
+  {
+   "word": "政治",
+   "kana": "せいじ",
+   "romaji": "seiji",
+   "meaning": "politics"
+  },
+  {
+   "word": "空港",
+   "kana": "くうこう",
+   "romaji": "kuukou",
+   "meaning": "airport"
+  },
+  {
+   "word": "受付",
+   "kana": "うけつけ",
+   "romaji": "uketsuke",
+   "meaning": "reception desk"
+  },
+  {
+   "word": "屋上",
+   "kana": "おくじょう",
+   "romaji": "okujou",
+   "meaning": "rooftop"
+  },
+  {
+   "word": "地震",
+   "kana": "じしん",
+   "romaji": "jishin",
+   "meaning": "earthquake"
+  },
+  {
+   "word": "台風",
+   "kana": "たいふう",
+   "romaji": "taifuu",
+   "meaning": "typhoon"
+  },
+  {
+   "word": "人口",
+   "kana": "じんこう",
+   "romaji": "jinkou",
+   "meaning": "population"
+  },
+  {
+   "word": "看護師",
+   "kana": "かんごし",
+   "romaji": "kangoshi",
+   "meaning": "nurse"
+  },
+  {
+   "word": "警察",
+   "kana": "けいさつ",
+   "romaji": "keisatsu",
+   "meaning": "police"
+  },
+  {
+   "word": "泥棒",
+   "kana": "どろぼう",
+   "romaji": "dorobou",
+   "meaning": "thief"
+  },
+  {
+   "word": "夢",
+   "kana": "ゆめ",
+   "romaji": "yume",
+   "meaning": "dream"
+  },
+  {
+   "word": "音",
+   "kana": "おと",
+   "romaji": "oto",
+   "meaning": "sound"
+  },
+  {
+   "word": "味",
+   "kana": "あじ",
+   "romaji": "aji",
+   "meaning": "taste, flavor"
+  },
+  {
+   "word": "匂い",
+   "kana": "におい",
+   "romaji": "nioi",
+   "meaning": "smell"
+  },
+  {
+   "word": "気分",
+   "kana": "きぶん",
+   "romaji": "kibun",
+   "meaning": "mood, feeling"
+  },
+  {
+   "word": "興味",
+   "kana": "きょうみ",
+   "romaji": "kyoumi",
+   "meaning": "interest"
+  },
+  {
+   "word": "関心",
+   "kana": "かんしん",
+   "romaji": "kanshin",
+   "meaning": "concern, interest"
+  },
+  {
+   "word": "意見",
+   "kana": "いけん",
+   "romaji": "iken",
+   "meaning": "opinion"
+  },
+  {
+   "word": "理由",
+   "kana": "りゆう",
+   "romaji": "riyuu",
+   "meaning": "reason"
+  },
+  {
+   "word": "原因",
+   "kana": "げんいん",
+   "romaji": "genin",
+   "meaning": "cause"
+  },
+  {
+   "word": "結果",
+   "kana": "けっか",
+   "romaji": "kekka",
+   "meaning": "result"
+  },
+  {
+   "word": "答える",
+   "kana": "こたえる",
+   "romaji": "kotaeru",
+   "meaning": "to answer"
+  },
+  {
+   "word": "集まる",
+   "kana": "あつまる",
+   "romaji": "atsumaru",
+   "meaning": "to gather"
+  },
+  {
+   "word": "運ぶ",
+   "kana": "はこぶ",
+   "romaji": "hakobu",
+   "meaning": "to carry"
+  },
+  {
+   "word": "拾う",
+   "kana": "ひろう",
+   "romaji": "hirou",
+   "meaning": "to pick up"
+  },
+  {
+   "word": "捨てる",
+   "kana": "すてる",
+   "romaji": "suteru",
+   "meaning": "to throw away"
+  },
+  {
+   "word": "直す",
+   "kana": "なおす",
+   "romaji": "naosu",
+   "meaning": "to fix, to repair"
+  },
+  {
+   "word": "壊れる",
+   "kana": "こわれる",
+   "romaji": "kowareru",
+   "meaning": "to break (down)"
+  },
+  {
+   "word": "濡れる",
+   "kana": "ぬれる",
+   "romaji": "nureru",
+   "meaning": "to get wet"
+  },
+  {
+   "word": "乾く",
+   "kana": "かわく",
+   "romaji": "kawaku",
+   "meaning": "to dry"
+  },
+  {
+   "word": "珍しい",
+   "kana": "めずらしい",
+   "romaji": "mezurashii",
+   "meaning": "rare, unusual"
+  }
+ ],
+ "N3": [
+  {
+   "word": "影響",
+   "kana": "えいきょう",
+   "romaji": "eikyou",
+   "meaning": "influence, effect"
+  },
+  {
+   "word": "解決",
+   "kana": "かいけつ",
+   "romaji": "kaiketsu",
+   "meaning": "solution, resolution"
+  },
+  {
+   "word": "環境",
+   "kana": "かんきょう",
+   "romaji": "kankyou",
+   "meaning": "environment"
+  },
+  {
+   "word": "関係",
+   "kana": "かんけい",
+   "romaji": "kankei",
+   "meaning": "relationship"
+  },
+  {
+   "word": "技術",
+   "kana": "ぎじゅつ",
+   "romaji": "gijutsu",
+   "meaning": "technology, skill"
+  },
+  {
+   "word": "疑問",
+   "kana": "ぎもん",
+   "romaji": "gimon",
+   "meaning": "doubt, question"
+  },
+  {
+   "word": "共通",
+   "kana": "きょうつう",
+   "romaji": "kyoutsuu",
+   "meaning": "common, shared"
+  },
+  {
+   "word": "協力",
+   "kana": "きょうりょく",
+   "romaji": "kyouryoku",
+   "meaning": "cooperation"
+  },
+  {
+   "word": "具体的",
+   "kana": "ぐたいてき",
+   "romaji": "gutaiteki",
+   "meaning": "concrete, specific"
+  },
+  {
+   "word": "訓練",
+   "kana": "くんれん",
+   "romaji": "kunren",
+   "meaning": "training, drill"
+  },
+  {
+   "word": "制度",
+   "kana": "せいど",
+   "romaji": "seido",
+   "meaning": "system, institution"
+  },
+  {
+   "word": "責任",
+   "kana": "せきにん",
+   "romaji": "sekinin",
+   "meaning": "responsibility"
+  },
+  {
+   "word": "想像",
+   "kana": "そうぞう",
+   "romaji": "souzou",
+   "meaning": "imagination"
+  },
+  {
+   "word": "対象",
+   "kana": "たいしょう",
+   "romaji": "taishou",
+   "meaning": "target, object"
+  },
+  {
+   "word": "態度",
+   "kana": "たいど",
+   "romaji": "taido",
+   "meaning": "attitude"
+  },
+  {
+   "word": "知識",
+   "kana": "ちしき",
+   "romaji": "chishiki",
+   "meaning": "knowledge"
+  },
+  {
+   "word": "調査",
+   "kana": "ちょうさ",
+   "romaji": "chousa",
+   "meaning": "survey, investigation"
+  },
+  {
+   "word": "提案",
+   "kana": "ていあん",
+   "romaji": "teian",
+   "meaning": "proposal, suggestion"
+  },
+  {
+   "word": "努力",
+   "kana": "どりょく",
+   "romaji": "doryoku",
+   "meaning": "effort"
+  },
+  {
+   "word": "能力",
+   "kana": "のうりょく",
+   "romaji": "nouryoku",
+   "meaning": "ability"
+  },
+  {
+   "word": "発展",
+   "kana": "はってん",
+   "romaji": "hatten",
+   "meaning": "development, growth"
+  },
+  {
+   "word": "判断",
+   "kana": "はんだん",
+   "romaji": "handan",
+   "meaning": "judgment, decision"
+  },
+  {
+   "word": "表現",
+   "kana": "ひょうげん",
+   "romaji": "hyougen",
+   "meaning": "expression"
+  },
+  {
+   "word": "評価",
+   "kana": "ひょうか",
+   "romaji": "hyouka",
+   "meaning": "evaluation"
+  },
+  {
+   "word": "方法",
+   "kana": "ほうほう",
+   "romaji": "houhou",
+   "meaning": "method"
+  },
+  {
+   "word": "目的",
+   "kana": "もくてき",
+   "romaji": "mokuteki",
+   "meaning": "purpose, goal"
+  },
+  {
+   "word": "欲張り",
+   "kana": "よくばり",
+   "romaji": "yokubari",
+   "meaning": "greedy"
+  },
+  {
+   "word": "理解",
+   "kana": "りかい",
+   "romaji": "rikai",
+   "meaning": "understanding"
+  },
+  {
+   "word": "我慢",
+   "kana": "がまん",
+   "romaji": "gaman",
+   "meaning": "patience, endurance"
+  },
+  {
+   "word": "遠慮",
+   "kana": "えんりょ",
+   "romaji": "enryo",
+   "meaning": "restraint, hesitation"
+  },
+  {
+   "word": "確認",
+   "kana": "かくにん",
+   "romaji": "kakunin",
+   "meaning": "confirmation"
+  },
+  {
+   "word": "感謝",
+   "kana": "かんしゃ",
+   "romaji": "kansha",
+   "meaning": "gratitude"
+  },
+  {
+   "word": "期待",
+   "kana": "きたい",
+   "romaji": "kitai",
+   "meaning": "expectation, hope"
+  },
+  {
+   "word": "記録",
+   "kana": "きろく",
+   "romaji": "kiroku",
+   "meaning": "record"
+  },
+  {
+   "word": "検査",
+   "kana": "けんさ",
+   "romaji": "kensa",
+   "meaning": "inspection, examination"
+  },
+  {
+   "word": "印象",
+   "kana": "いんしょう",
+   "romaji": "inshou",
+   "meaning": "impression"
+  },
+  {
+   "word": "状況",
+   "kana": "じょうきょう",
+   "romaji": "joukyou",
+   "meaning": "situation"
+  },
+  {
+   "word": "状態",
+   "kana": "じょうたい",
+   "romaji": "joutai",
+   "meaning": "state, condition"
+  },
+  {
+   "word": "情報",
+   "kana": "じょうほう",
+   "romaji": "jouhou",
+   "meaning": "information"
+  },
+  {
+   "word": "条件",
+   "kana": "じょうけん",
+   "romaji": "jouken",
+   "meaning": "condition, requirement"
+  },
+  {
+   "word": "経営",
+   "kana": "けいえい",
+   "romaji": "keiei",
+   "meaning": "management (of a business)"
+  },
+  {
+   "word": "命令",
+   "kana": "めいれい",
+   "romaji": "meirei",
+   "meaning": "order, command"
+  },
+  {
+   "word": "募集",
+   "kana": "ぼしゅう",
+   "romaji": "boshuu",
+   "meaning": "recruitment"
+  },
+  {
+   "word": "応募",
+   "kana": "おうぼ",
+   "romaji": "oubo",
+   "meaning": "application (for a job)"
+  },
+  {
+   "word": "面接",
+   "kana": "めんせつ",
+   "romaji": "mensetsu",
+   "meaning": "job interview"
+  },
+  {
+   "word": "完成",
+   "kana": "かんせい",
+   "romaji": "kansei",
+   "meaning": "completion"
+  },
+  {
+   "word": "成功",
+   "kana": "せいこう",
+   "romaji": "seikou",
+   "meaning": "success"
+  },
+  {
+   "word": "失敗",
+   "kana": "しっぱい",
+   "romaji": "shippai",
+   "meaning": "failure"
+  },
+  {
+   "word": "成長",
+   "kana": "せいちょう",
+   "romaji": "seichou",
+   "meaning": "growth"
+  },
+  {
+   "word": "変化",
+   "kana": "へんか",
+   "romaji": "henka",
+   "meaning": "change"
+  },
+  {
+   "word": "違い",
+   "kana": "ちがい",
+   "romaji": "chigai",
+   "meaning": "difference"
+  },
+  {
+   "word": "特徴",
+   "kana": "とくちょう",
+   "romaji": "tokuchou",
+   "meaning": "characteristic, feature"
+  },
+  {
+   "word": "性格",
+   "kana": "せいかく",
+   "romaji": "seikaku",
+   "meaning": "personality"
+  },
+  {
+   "word": "癖",
+   "kana": "くせ",
+   "romaji": "kuse",
+   "meaning": "habit (often bad)"
+  },
+  {
+   "word": "行動",
+   "kana": "こうどう",
+   "romaji": "koudou",
+   "meaning": "action, behavior"
+  },
+  {
+   "word": "移動",
+   "kana": "いどう",
+   "romaji": "idou",
+   "meaning": "movement, transfer"
+  },
+  {
+   "word": "到着",
+   "kana": "とうちゃく",
+   "romaji": "touchaku",
+   "meaning": "arrival"
+  },
+  {
+   "word": "出発",
+   "kana": "しゅっぱつ",
+   "romaji": "shuppatsu",
+   "meaning": "departure"
+  },
+  {
+   "word": "延期",
+   "kana": "えんき",
+   "romaji": "enki",
+   "meaning": "postponement"
+  },
+  {
+   "word": "中止",
+   "kana": "ちゅうし",
+   "romaji": "chuushi",
+   "meaning": "cancellation"
+  },
+  {
+   "word": "節約",
+   "kana": "せつやく",
+   "romaji": "setsuyaku",
+   "meaning": "saving, economizing"
+  },
+  {
+   "word": "貯金",
+   "kana": "ちょきん",
+   "romaji": "chokin",
+   "meaning": "savings (money)"
+  },
+  {
+   "word": "値段",
+   "kana": "ねだん",
+   "romaji": "nedan",
+   "meaning": "price"
+  },
+  {
+   "word": "量",
+   "kana": "りょう",
+   "romaji": "ryou",
+   "meaning": "quantity, amount"
+  },
+  {
+   "word": "質",
+   "kana": "しつ",
+   "romaji": "shitsu",
+   "meaning": "quality"
+  }
+ ],
+ "N2": [
+  {
+   "word": "維持",
+   "kana": "いじ",
+   "romaji": "iji",
+   "meaning": "maintenance, preservation"
+  },
+  {
+   "word": "一致",
+   "kana": "いっち",
+   "romaji": "itchi",
+   "meaning": "agreement, match"
+  },
+  {
+   "word": "隠す",
+   "kana": "かくす",
+   "romaji": "kakusu",
+   "meaning": "to hide, to conceal"
+  },
+  {
+   "word": "傾向",
+   "kana": "けいこう",
+   "romaji": "keikou",
+   "meaning": "tendency, trend"
+  },
+  {
+   "word": "契約",
+   "kana": "けいやく",
+   "romaji": "keiyaku",
+   "meaning": "contract"
+  },
+  {
+   "word": "貢献",
+   "kana": "こうけん",
+   "romaji": "kouken",
+   "meaning": "contribution"
+  },
+  {
+   "word": "克服",
+   "kana": "こくふく",
+   "romaji": "kokufuku",
+   "meaning": "overcoming, conquering"
+  },
+  {
+   "word": "混乱",
+   "kana": "こんらん",
+   "romaji": "konran",
+   "meaning": "confusion, chaos"
+  },
+  {
+   "word": "削除",
+   "kana": "さくじょ",
+   "romaji": "sakujo",
+   "meaning": "deletion"
+  },
+  {
+   "word": "刺激",
+   "kana": "しげき",
+   "romaji": "shigeki",
+   "meaning": "stimulus, stimulation"
+  },
+  {
+   "word": "実施",
+   "kana": "じっし",
+   "romaji": "jisshi",
+   "meaning": "implementation"
+  },
+  {
+   "word": "充実",
+   "kana": "じゅうじつ",
+   "romaji": "juujitsu",
+   "meaning": "fullness, enrichment"
+  },
+  {
+   "word": "柔軟",
+   "kana": "じゅうなん",
+   "romaji": "juunan",
+   "meaning": "flexible"
+  },
+  {
+   "word": "詳細",
+   "kana": "しょうさい",
+   "romaji": "shousai",
+   "meaning": "details"
+  },
+  {
+   "word": "承認",
+   "kana": "しょうにん",
+   "romaji": "shounin",
+   "meaning": "approval"
+  },
+  {
+   "word": "辛抱",
+   "kana": "しんぼう",
+   "romaji": "shinbou",
+   "meaning": "patience, endurance"
+  },
+  {
+   "word": "推測",
+   "kana": "すいそく",
+   "romaji": "suisoku",
+   "meaning": "guess, speculation"
+  },
+  {
+   "word": "正確",
+   "kana": "せいかく",
+   "romaji": "seikaku",
+   "meaning": "accurate, precise"
+  },
+  {
+   "word": "設備",
+   "kana": "せつび",
+   "romaji": "setsubi",
+   "meaning": "equipment, facilities"
+  },
+  {
+   "word": "占める",
+   "kana": "しめる",
+   "romaji": "shimeru",
+   "meaning": "to occupy, to account for"
+  },
+  {
+   "word": "損害",
+   "kana": "そんがい",
+   "romaji": "songai",
+   "meaning": "damage, loss"
+  },
+  {
+   "word": "妥当",
+   "kana": "だとう",
+   "romaji": "datou",
+   "meaning": "valid, reasonable"
+  },
+  {
+   "word": "抽象的",
+   "kana": "ちゅうしょうてき",
+   "romaji": "chuushouteki",
+   "meaning": "abstract"
+  },
+  {
+   "word": "手間",
+   "kana": "てま",
+   "romaji": "tema",
+   "meaning": "time and effort"
+  },
+  {
+   "word": "統計",
+   "kana": "とうけい",
+   "romaji": "toukei",
+   "meaning": "statistics"
+  },
+  {
+   "word": "把握",
+   "kana": "はあく",
+   "romaji": "haaku",
+   "meaning": "grasp, understanding"
+  },
+  {
+   "word": "莫大",
+   "kana": "ばくだい",
+   "romaji": "bakudai",
+   "meaning": "enormous, vast"
+  },
+  {
+   "word": "発揮",
+   "kana": "はっき",
+   "romaji": "hakki",
+   "meaning": "demonstration (of ability)"
+  },
+  {
+   "word": "矛盾",
+   "kana": "むじゅん",
+   "romaji": "mujun",
+   "meaning": "contradiction"
+  },
+  {
+   "word": "面倒",
+   "kana": "めんどう",
+   "romaji": "mendou",
+   "meaning": "trouble, bother"
+  },
+  {
+   "word": "要求",
+   "kana": "ようきゅう",
+   "romaji": "youkyuu",
+   "meaning": "demand, request"
+  },
+  {
+   "word": "予測",
+   "kana": "よそく",
+   "romaji": "yosoku",
+   "meaning": "prediction, forecast"
+  },
+  {
+   "word": "論理",
+   "kana": "ろんり",
+   "romaji": "ronri",
+   "meaning": "logic"
+  },
+  {
+   "word": "賢い",
+   "kana": "かしこい",
+   "romaji": "kashikoi",
+   "meaning": "wise, clever"
+  },
+  {
+   "word": "著しい",
+   "kana": "いちじるしい",
+   "romaji": "ichijirushii",
+   "meaning": "remarkable, striking"
+  },
+  {
+   "word": "依頼",
+   "kana": "いらい",
+   "romaji": "irai",
+   "meaning": "request, commission"
+  },
+  {
+   "word": "催促",
+   "kana": "さいそく",
+   "romaji": "saisoku",
+   "meaning": "urging, pressing"
+  },
+  {
+   "word": "交渉",
+   "kana": "こうしょう",
+   "romaji": "koushou",
+   "meaning": "negotiation"
+  },
+  {
+   "word": "妥協",
+   "kana": "だきょう",
+   "romaji": "dakyou",
+   "meaning": "compromise"
+  },
+  {
+   "word": "譲歩",
+   "kana": "じょうほ",
+   "romaji": "jouho",
+   "meaning": "concession"
+  },
+  {
+   "word": "承知",
+   "kana": "しょうち",
+   "romaji": "shouchi",
+   "meaning": "acknowledgment, consent"
+  },
+  {
+   "word": "拒否",
+   "kana": "きょひ",
+   "romaji": "kyohi",
+   "meaning": "refusal, rejection"
+  },
+  {
+   "word": "賛成",
+   "kana": "さんせい",
+   "romaji": "sansei",
+   "meaning": "agreement, approval"
+  },
+  {
+   "word": "反対",
+   "kana": "はんたい",
+   "romaji": "hantai",
+   "meaning": "opposition"
+  },
+  {
+   "word": "批判",
+   "kana": "ひはん",
+   "romaji": "hihan",
+   "meaning": "criticism"
+  },
+  {
+   "word": "評判",
+   "kana": "ひょうばん",
+   "romaji": "hyouban",
+   "meaning": "reputation"
+  },
+  {
+   "word": "噂",
+   "kana": "うわさ",
+   "romaji": "uwasa",
+   "meaning": "rumor"
+  },
+  {
+   "word": "誤解",
+   "kana": "ごかい",
+   "romaji": "gokai",
+   "meaning": "misunderstanding"
+  },
+  {
+   "word": "勘違い",
+   "kana": "かんちがい",
+   "romaji": "kanchigai",
+   "meaning": "mistaken assumption"
+  },
+  {
+   "word": "錯覚",
+   "kana": "さっかく",
+   "romaji": "sakkaku",
+   "meaning": "illusion"
+  },
+  {
+   "word": "偶然",
+   "kana": "ぐうぜん",
+   "romaji": "guuzen",
+   "meaning": "coincidence"
+  },
+  {
+   "word": "必然",
+   "kana": "ひつぜん",
+   "romaji": "hitsuzen",
+   "meaning": "inevitability"
+  },
+  {
+   "word": "頻繁",
+   "kana": "ひんぱん",
+   "romaji": "hinpan",
+   "meaning": "frequent"
+  },
+  {
+   "word": "徐々に",
+   "kana": "じょじょに",
+   "romaji": "jojoni",
+   "meaning": "gradually"
+  },
+  {
+   "word": "依然",
+   "kana": "いぜん",
+   "romaji": "izen",
+   "meaning": "still, as ever"
+  },
+  {
+   "word": "案外",
+   "kana": "あんがい",
+   "romaji": "angai",
+   "meaning": "unexpectedly"
+  },
+  {
+   "word": "極端",
+   "kana": "きょくたん",
+   "romaji": "kyokutan",
+   "meaning": "extreme"
+  },
+  {
+   "word": "強引",
+   "kana": "ごういん",
+   "romaji": "gouin",
+   "meaning": "forceful, pushy"
+  },
+  {
+   "word": "慎重",
+   "kana": "しんちょう",
+   "romaji": "shinchou",
+   "meaning": "cautious, careful"
+  },
+  {
+   "word": "率直",
+   "kana": "そっちょく",
+   "romaji": "sotchoku",
+   "meaning": "frank, candid"
+  },
+  {
+   "word": "卑怯",
+   "kana": "ひきょう",
+   "romaji": "hikyou",
+   "meaning": "cowardly, unfair"
+  },
+  {
+   "word": "贅沢",
+   "kana": "ぜいたく",
+   "romaji": "zeitaku",
+   "meaning": "luxury, extravagance"
+  },
+  {
+   "word": "質素",
+   "kana": "しっそ",
+   "romaji": "shisso",
+   "meaning": "simple, frugal"
+  },
+  {
+   "word": "愉快",
+   "kana": "ゆかい",
+   "romaji": "yukai",
+   "meaning": "pleasant, cheerful"
+  },
+  {
+   "word": "憂鬱",
+   "kana": "ゆううつ",
+   "romaji": "yuuutsu",
+   "meaning": "depression, gloom"
+  }
+ ],
+ "N1": [
+  {
+   "word": "曖昧",
+   "kana": "あいまい",
+   "romaji": "aimai",
+   "meaning": "vague, ambiguous"
+  },
+  {
+   "word": "軋轢",
+   "kana": "あつれき",
+   "romaji": "atsureki",
+   "meaning": "friction, discord"
+  },
+  {
+   "word": "一環",
+   "kana": "いっかん",
+   "romaji": "ikkan",
+   "meaning": "a part (of a whole), a link"
+  },
+  {
+   "word": "逸脱",
+   "kana": "いつだつ",
+   "romaji": "itsudatsu",
+   "meaning": "deviation"
+  },
+  {
+   "word": "隠蔽",
+   "kana": "いんぺい",
+   "romaji": "inpei",
+   "meaning": "concealment, cover-up"
+  },
+  {
+   "word": "渦",
+   "kana": "うず",
+   "romaji": "uzu",
+   "meaning": "whirlpool, vortex"
+  },
+  {
+   "word": "疎か",
+   "kana": "おろそか",
+   "romaji": "orosoka",
+   "meaning": "neglectful"
+  },
+  {
+   "word": "該当",
+   "kana": "がいとう",
+   "romaji": "gaitou",
+   "meaning": "corresponding, applicable"
+  },
+  {
+   "word": "顧みる",
+   "kana": "かえりみる",
+   "romaji": "kaerimiru",
+   "meaning": "to look back on, to reflect"
+  },
+  {
+   "word": "葛藤",
+   "kana": "かっとう",
+   "romaji": "kattou",
+   "meaning": "conflict, inner struggle"
+  },
+  {
+   "word": "緩和",
+   "kana": "かんわ",
+   "romaji": "kanwa",
+   "meaning": "relief, easing"
+  },
+  {
+   "word": "危惧",
+   "kana": "きぐ",
+   "romaji": "kigu",
+   "meaning": "apprehension, fear"
+  },
+  {
+   "word": "逆境",
+   "kana": "ぎゃっきょう",
+   "romaji": "gyakkyou",
+   "meaning": "adversity"
+  },
+  {
+   "word": "驚愕",
+   "kana": "きょうがく",
+   "romaji": "kyougaku",
+   "meaning": "astonishment"
+  },
+  {
+   "word": "均衡",
+   "kana": "きんこう",
+   "romaji": "kinkou",
+   "meaning": "equilibrium, balance"
+  },
+  {
+   "word": "顕著",
+   "kana": "けんちょ",
+   "romaji": "kencho",
+   "meaning": "conspicuous, remarkable"
+  },
+  {
+   "word": "洞察",
+   "kana": "どうさつ",
+   "romaji": "dousatsu",
+   "meaning": "insight"
+  },
+  {
+   "word": "執着",
+   "kana": "しゅうちゃく",
+   "romaji": "shuuchaku",
+   "meaning": "attachment, obsession"
+  },
+  {
+   "word": "遂行",
+   "kana": "すいこう",
+   "romaji": "suikou",
+   "meaning": "accomplishment, execution"
+  },
+  {
+   "word": "是正",
+   "kana": "ぜせい",
+   "romaji": "zesei",
+   "meaning": "correction, rectification"
+  },
+  {
+   "word": "堕落",
+   "kana": "だらく",
+   "romaji": "daraku",
+   "meaning": "corruption, depravity"
+  },
+  {
+   "word": "逐一",
+   "kana": "ちくいち",
+   "romaji": "chikuichi",
+   "meaning": "one by one, in detail"
+  },
+  {
+   "word": "陳腐",
+   "kana": "ちんぷ",
+   "romaji": "chinpu",
+   "meaning": "cliché, stale"
+  },
+  {
+   "word": "踏襲",
+   "kana": "とうしゅう",
+   "romaji": "toushuu",
+   "meaning": "following (a precedent)"
+  },
+  {
+   "word": "如実",
+   "kana": "にょじつ",
+   "romaji": "nyojitsu",
+   "meaning": "vivid, true to life"
+  },
+  {
+   "word": "捻出",
+   "kana": "ねんしゅつ",
+   "romaji": "nenshutsu",
+   "meaning": "contriving (money/time)"
+  },
+  {
+   "word": "漠然",
+   "kana": "ばくぜん",
+   "romaji": "bakuzen",
+   "meaning": "vague, obscure"
+  },
+  {
+   "word": "払拭",
+   "kana": "ふっしょく",
+   "romaji": "fusshoku",
+   "meaning": "wiping away, sweeping away"
+  },
+  {
+   "word": "閉塞",
+   "kana": "へいそく",
+   "romaji": "heisoku",
+   "meaning": "blockage, stagnation"
+  },
+  {
+   "word": "膨大",
+   "kana": "ぼうだい",
+   "romaji": "boudai",
+   "meaning": "huge, enormous"
+  },
+  {
+   "word": "満喫",
+   "kana": "まんきつ",
+   "romaji": "mankitsu",
+   "meaning": "fully enjoying"
+  },
+  {
+   "word": "憂慮",
+   "kana": "ゆうりょ",
+   "romaji": "yuuryo",
+   "meaning": "anxiety, concern"
+  },
+  {
+   "word": "癒着",
+   "kana": "ゆちゃく",
+   "romaji": "yuchaku",
+   "meaning": "collusion; adhesion"
+  },
+  {
+   "word": "擁護",
+   "kana": "ようご",
+   "romaji": "yougo",
+   "meaning": "protection, advocacy"
+  },
+  {
+   "word": "脆弱",
+   "kana": "ぜいじゃく",
+   "romaji": "zeijaku",
+   "meaning": "fragile, vulnerable"
+  },
+  {
+   "word": "会釈",
+   "kana": "えしゃく",
+   "romaji": "eshaku",
+   "meaning": "slight bow, nod"
+  },
+  {
+   "word": "会心",
+   "kana": "かいしん",
+   "romaji": "kaishin",
+   "meaning": "satisfaction (with one's work)"
+  },
+  {
+   "word": "懐疑",
+   "kana": "かいぎ",
+   "romaji": "kaigi",
+   "meaning": "skepticism, doubt"
+  },
+  {
+   "word": "介入",
+   "kana": "かいにゅう",
+   "romaji": "kainyuu",
+   "meaning": "intervention"
+  },
+  {
+   "word": "該博",
+   "kana": "がいはく",
+   "romaji": "gaihaku",
+   "meaning": "profound (knowledge)"
+  },
+  {
+   "word": "寛容",
+   "kana": "かんよう",
+   "romaji": "kanyou",
+   "meaning": "tolerance, generosity"
+  },
+  {
+   "word": "陥没",
+   "kana": "かんぼつ",
+   "romaji": "kanbotsu",
+   "meaning": "cave-in, subsidence"
+  },
+  {
+   "word": "帰依",
+   "kana": "きえ",
+   "romaji": "kie",
+   "meaning": "devotion (religious)"
+  },
+  {
+   "word": "既成",
+   "kana": "きせい",
+   "romaji": "kisei",
+   "meaning": "established, existing"
+  },
+  {
+   "word": "拮抗",
+   "kana": "きっこう",
+   "romaji": "kikkou",
+   "meaning": "rivalry, being evenly matched"
+  },
+  {
+   "word": "虚偽",
+   "kana": "きょぎ",
+   "romaji": "kyogi",
+   "meaning": "falsehood"
+  },
+  {
+   "word": "窮地",
+   "kana": "きゅうち",
+   "romaji": "kyuuchi",
+   "meaning": "predicament, dire situation"
+  },
+  {
+   "word": "驚嘆",
+   "kana": "きょうたん",
+   "romaji": "kyoutan",
+   "meaning": "admiration, wonder"
+  },
+  {
+   "word": "極致",
+   "kana": "きょくち",
+   "romaji": "kyokuchi",
+   "meaning": "culmination, height"
+  },
+  {
+   "word": "空前",
+   "kana": "くうぜん",
+   "romaji": "kuuzen",
+   "meaning": "unprecedented"
+  },
+  {
+   "word": "愚痴",
+   "kana": "ぐち",
+   "romaji": "guchi",
+   "meaning": "complaint, grumble"
+  },
+  {
+   "word": "軽率",
+   "kana": "けいそつ",
+   "romaji": "keisotsu",
+   "meaning": "rash, careless"
+  },
+  {
+   "word": "結束",
+   "kana": "けっそく",
+   "romaji": "kessoku",
+   "meaning": "unity, solidarity"
+  },
+  {
+   "word": "懸念",
+   "kana": "けねん",
+   "romaji": "kenen",
+   "meaning": "worry, apprehension"
+  },
+  {
+   "word": "顕在",
+   "kana": "けんざい",
+   "romaji": "kenzai",
+   "meaning": "apparent, manifest"
+  },
+  {
+   "word": "倹約",
+   "kana": "けんやく",
+   "romaji": "kenyaku",
+   "meaning": "thrift, frugality"
+  },
+  {
+   "word": "語弊",
+   "kana": "ごへい",
+   "romaji": "gohei",
+   "meaning": "misleading expression"
+  },
+  {
+   "word": "克明",
+   "kana": "こくめい",
+   "romaji": "kokumei",
+   "meaning": "detailed, faithful (record)"
+  },
+  {
+   "word": "孤立",
+   "kana": "こりつ",
+   "romaji": "koritsu",
+   "meaning": "isolation"
+  },
+  {
+   "word": "痕跡",
+   "kana": "こんせき",
+   "romaji": "konseki",
+   "meaning": "trace, vestige"
+  },
+  {
+   "word": "困惑",
+   "kana": "こんわく",
+   "romaji": "konwaku",
+   "meaning": "bewilderment"
+  },
+  {
+   "word": "采配",
+   "kana": "さいはい",
+   "romaji": "saihai",
+   "meaning": "command, leadership"
+  },
+  {
+   "word": "錯誤",
+   "kana": "さくご",
+   "romaji": "sakugo",
+   "meaning": "error, discrepancy"
+  },
+  {
+   "word": "暫定",
+   "kana": "ざんてい",
+   "romaji": "zantei",
+   "meaning": "provisional, tentative"
+  },
+  {
+   "word": "示唆",
+   "kana": "しさ",
+   "romaji": "shisa",
+   "meaning": "suggestion, implication"
+  }
+ ]
+}

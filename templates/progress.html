@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Progress{% endblock %}
+{% block content %}
+
+<div class="page-head">
+  <h1>📊 Your Progress</h1>
+  <p>Everything is saved right in your browser. Earn XP in any game — every 250 XP levels you up.</p>
+</div>
+
+<div class="prog-grid">
+  <div class="card prog-card">
+    <div class="level-badge" id="lvlBadge"><div id="lvlNum">Lv 1</div></div>
+    <div class="lbl" id="lvlNext">250 XP to next level</div>
+  </div>
+  <div class="card prog-card">
+    <div class="huge" id="pgXP">0</div>
+    <div class="lbl">Total XP</div>
+  </div>
+  <div class="card prog-card">
+    <div class="huge" id="pgStreak">0🔥</div>
+    <div class="lbl">Day streak</div>
+  </div>
+  <div class="card prog-card">
+    <div class="huge" id="pgToday">0</div>
+    <div class="lbl">XP earned today</div>
+  </div>
+</div>
+
+<h2 class="section-title">Per-activity stats</h2>
+<div class="card">
+  <div id="gameStats" style="display:grid;gap:12px"></div>
+  <p id="noStats" style="color:var(--muted);font-weight:600">No games played yet — go earn some XP! 🎮</p>
+</div>
+
+<h2 class="section-title">Last 14 days</h2>
+<div class="card">
+  <div id="dayBars" style="display:flex;align-items:flex-end;gap:6px;height:140px"></div>
+</div>
+
+<div style="margin-top:26px;text-align:center">
+  <button class="btn ghost small" id="resetBtn">Reset all progress</button>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+(() => {
+  const s = NQ.getStore();
+  const lvl = NQ.learnerLevel(s.xp);
+  const into = s.xp % NQ.LEVEL_STEP;
+
+  document.getElementById("pgXP").textContent = s.xp.toLocaleString();
+  document.getElementById("pgStreak").textContent = `${s.streak}🔥`;
+  document.getElementById("lvlNum").textContent = `Lv ${lvl}`;
+  document.getElementById("lvlNext").textContent = `${NQ.LEVEL_STEP - into} XP to level ${lvl + 1}`;
+  document.getElementById("lvlBadge").style.setProperty("--pct", `${(into / NQ.LEVEL_STEP) * 100}%`);
+
+  const today = new Date().toISOString().slice(0, 10);
+  document.getElementById("pgToday").textContent = (s.days[today] || 0).toLocaleString();
+
+  const names = { "kana-quiz": "🈁 Kana Quiz", flashcards: "🃏 Flashcards", quiz: "⚔️ Quiz Arena",
+                  matching: "🧩 Memory Match", typing: "⌨️ Typing Dash", listening: "🎧 Listening Lab" };
+  const box = document.getElementById("gameStats");
+  const entries = Object.entries(s.games || {});
+  if (entries.length) {
+    document.getElementById("noStats").style.display = "none";
+    const maxXP = Math.max(...entries.map(([, g]) => g.xp));
+    entries.sort((a, b) => b[1].xp - a[1].xp).forEach(([key, g]) => {
+      const row = document.createElement("div");
+      row.innerHTML = `
+        <div style="display:flex;justify-content:space-between;font-weight:700;margin-bottom:4px">
+          <span>${names[key] || key}</span>
+          <span style="color:var(--muted)">${g.plays} plays · ${g.xp.toLocaleString()} XP</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:${(g.xp / maxXP) * 100}%"></div></div>`;
+      box.appendChild(row);
+    });
+  }
+
+  const bars = document.getElementById("dayBars");
+  const days = [];
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date(Date.now() - i * 864e5).toISOString().slice(0, 10);
+    days.push([d, s.days?.[d] || 0]);
+  }
+  const maxDay = Math.max(...days.map(([, v]) => v), 1);
+  days.forEach(([d, v]) => {
+    const col = document.createElement("div");
+    col.style.cssText = "flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end";
+    col.innerHTML = `
+      <div style="width:100%;max-width:34px;height:${Math.max((v / maxDay) * 100, 3)}%;border-radius:8px 8px 4px 4px;
+        background:${v ? "linear-gradient(180deg,#818CF8,#4F46E5)" : "rgba(199,210,254,.5)"}" title="${d}: ${v} XP"></div>
+      <span style="font-size:.62rem;color:var(--muted);font-weight:700">${d.slice(8)}</span>`;
+    bars.appendChild(col);
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    if (confirm("Really erase all XP, streaks and stats? This can't be undone.")) {
+      localStorage.removeItem("nq_progress");
+      location.reload();
+    }
+  });
+})();
+</script>
+{% endblock %}
