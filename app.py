@@ -103,6 +103,15 @@ def pick_level(default="N5"):
     return lvl if lvl in LEVELS else default
 
 
+def pick_int(name, default, hi):
+    """Query-param int clamped to 0..hi — bad input falls back to the default."""
+    try:
+        n = int(request.args.get(name, default))
+    except (TypeError, ValueError):
+        return default
+    return max(0, min(n, hi))
+
+
 @app.route("/api/vocab")
 def api_vocab():
     lvl = pick_level()
@@ -122,7 +131,7 @@ def api_quiz():
     """Multiple-choice questions. mode: meaning | reading | reverse | kanji"""
     lvl = pick_level()
     mode = request.args.get("mode", "meaning")
-    count = min(int(request.args.get("count", 10)), 20)
+    count = pick_int("count", 10, 20)
 
     questions = []
     if mode == "kanji":
@@ -172,7 +181,7 @@ def api_matching():
     """Pairs for the memory game. type: kana | vocab"""
     lvl = pick_level()
     kind = request.args.get("type", "vocab")
-    pairs = int(request.args.get("pairs", 8))
+    pairs = pick_int("pairs", 8, 50)
     if kind == "kana":
         script = request.args.get("script", "hiragana")
         pool = KANA_FLAT.get(script, KANA_FLAT["hiragana"])
@@ -190,7 +199,7 @@ def api_typing():
     """Items for the typing game. type: kana | vocab"""
     lvl = pick_level()
     kind = request.args.get("type", "kana")
-    count = min(int(request.args.get("count", 15)), 40)
+    count = pick_int("count", 15, 40)
     if kind == "vocab":
         pool = VOCAB[lvl]
         chosen = random.sample(pool, min(count, len(pool)))
@@ -217,7 +226,7 @@ def api_typing():
 def api_listening():
     """Listening rounds: hear the word (TTS on client), pick what you heard."""
     lvl = pick_level()
-    count = min(int(request.args.get("count", 10)), 20)
+    count = pick_int("count", 10, 20)
     pool = VOCAB[lvl]
     chosen = random.sample(pool, min(count, len(pool)))
     rounds = []
@@ -232,4 +241,7 @@ def api_listening():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    # Dev only — production runs under gunicorn (see ecosystem.config.js).
+    # Debug exposes the Werkzeug console, so it stays opt-in and loopback-bound.
+    app.run(host=os.environ.get("NQ_HOST", "127.0.0.1"), port=5001,
+            debug=os.environ.get("NQ_DEBUG") == "1")

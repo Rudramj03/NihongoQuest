@@ -8,7 +8,8 @@ PLATFORM=$SDK/platforms/android-34/android.jar
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 BUILD=$ROOT/build
 KEYSTORE=$ROOT/nihongoquest.keystore
-KS_PASS=nihongoquest-release
+# Never hardcode this — export NQ_KEYSTORE_PASS before running.
+KS_PASS="${NQ_KEYSTORE_PASS:?export NQ_KEYSTORE_PASS with the signing keystore password}"
 
 rm -rf "$BUILD"
 mkdir -p "$BUILD/obj" "$BUILD/dex" "$BUILD/compiled"
@@ -46,6 +47,7 @@ if [ ! -f "$KEYSTORE" ]; then
     -storepass "$KS_PASS" -keypass "$KS_PASS" \
     -dname "CN=NihongoQuest, OU=Dev, O=NihongoQuest, L=Internet, C=JP" >/dev/null 2>&1
 fi
+chmod 600 "$KEYSTORE"
 "$BT/apksigner" sign --ks "$KEYSTORE" --ks-pass "pass:$KS_PASS" \
   --key-pass "pass:$KS_PASS" \
   --out "$BUILD/NihongoQuest.apk" "$BUILD/aligned.apk"
