@@ -6,7 +6,7 @@
   --secondary: #818CF8;
   --accent: #16A34A;
   --accent-soft: #DCFCE7;
-  --bg: #EEF2FF;
+  --bg: #FBF0F6;
   --fg: #312E81;
   --muted: #6366A8;
   --surface: #FFFFFF;
@@ -34,13 +34,86 @@ body {
   color: var(--fg);
   background: var(--bg);
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(129,140,248,.16) 0, transparent 28%),
-    radial-gradient(circle at 88% 12%, rgba(34,197,94,.10) 0, transparent 26%),
-    radial-gradient(circle at 80% 85%, rgba(129,140,248,.14) 0, transparent 30%);
+    radial-gradient(circle at 12% 18%, rgba(244,114,182,.14) 0, transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(129,140,248,.13) 0, transparent 26%),
+    radial-gradient(circle at 80% 85%, rgba(244,114,182,.12) 0, transparent 30%);
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
+/* ---------- sakura tree ----------
+   transform-origin tracks the trunk base in the SVG (x=196 of 600) so the
+   sway pivots at the roots rather than the middle of the box. */
+.sakura-tree {
+  position: fixed; left: -4vw; bottom: 0; z-index: -1;
+  width: min(54vw, 540px); height: auto;
+  opacity: .55; pointer-events: none;
+  transform-origin: 33% 100%;
+  animation: tree-sway 13s ease-in-out infinite alternate;
+}
+@keyframes tree-sway {
+  from { rotate: -0.7deg; }
+  to   { rotate:  0.9deg; }
+}
+
+/* ---------- drifting sakura backdrop ----------
+   span falls (transform), the inner i sways and spins using the standalone
+   `translate`/`rotate` properties so the three motions never fight over one
+   transform. z-index -1 keeps it above the body wash but under all content. */
+.sakura {
+  position: fixed; inset: 0; z-index: -1;
+  overflow: hidden; pointer-events: none;
+}
+.sakura span {
+  position: absolute; top: 0;
+  will-change: transform;
+  animation: petal-fall linear infinite;
+}
+.sakura i {
+  display: block;
+  background: linear-gradient(135deg, #FBCFE8, #F472B6);
+  border-radius: 100% 0 100% 0;
+  animation: petal-sway 4s ease-in-out infinite alternate,
+             petal-spin 9s linear infinite;
+}
+@keyframes petal-fall {
+  from { transform: translateY(-12vh); }
+  to   { transform: translateY(112vh); }
+}
+@keyframes petal-sway {
+  from { translate: -14px 0; }
+  to   { translate: 14px 0; }
+}
+@keyframes petal-spin {
+  from { rotate: 0deg; }
+  to   { rotate: 360deg; }
+}
+.sakura span:nth-child(1)  { left:  4%; animation-duration: 19s; animation-delay:  -2s; }
+.sakura span:nth-child(2)  { left: 12%; animation-duration: 25s; animation-delay: -11s; }
+.sakura span:nth-child(3)  { left: 20%; animation-duration: 16s; animation-delay:  -7s; }
+.sakura span:nth-child(4)  { left: 27%; animation-duration: 22s; animation-delay: -16s; }
+.sakura span:nth-child(5)  { left: 35%; animation-duration: 18s; animation-delay:  -4s; }
+.sakura span:nth-child(6)  { left: 43%; animation-duration: 27s; animation-delay: -20s; }
+.sakura span:nth-child(7)  { left: 50%; animation-duration: 15s; animation-delay: -10s; }
+.sakura span:nth-child(8)  { left: 58%; animation-duration: 23s; animation-delay:  -1s; }
+.sakura span:nth-child(9)  { left: 66%; animation-duration: 17s; animation-delay: -13s; }
+.sakura span:nth-child(10) { left: 73%; animation-duration: 26s; animation-delay:  -6s; }
+.sakura span:nth-child(11) { left: 81%; animation-duration: 20s; animation-delay: -18s; }
+.sakura span:nth-child(12) { left: 88%; animation-duration: 14s; animation-delay:  -3s; }
+.sakura span:nth-child(13) { left: 94%; animation-duration: 24s; animation-delay:  -9s; }
+.sakura span:nth-child(14) { left: 98%; animation-duration: 21s; animation-delay: -15s; }
+.sakura span:nth-child(3n)   i { width: 9px;  height: 9px;  opacity: .34; animation-duration: 5.5s, 11s; }
+.sakura span:nth-child(3n+1) i { width: 13px; height: 13px; opacity: .46; }
+.sakura span:nth-child(3n+2) i { width: 16px; height: 16px; opacity: .40; animation-duration: 3.2s, 7.5s; }
+@media (max-width: 640px) {
+  /* thin the field out so low-end phones aren't compositing 14 layers */
+  .sakura span:nth-child(n+9) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sakura { display: none; }
+  .sakura-tree { animation: none; }  /* tree stays, it just stops swaying */
+}
+
 .jp { font-family: var(--font-jp); }
 h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
 
@@ -56,7 +129,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
   display: flex; align-items: center; gap: 18px;
   padding: 10px clamp(14px, 4vw, 40px);
   padding-top: calc(10px + env(safe-area-inset-top, 0px));
-  background: rgba(238, 242, 255, .86);
+  background: rgba(251, 240, 246, .86);
   backdrop-filter: blur(12px);
   border-bottom: 2px solid rgba(199, 210, 254, .6);
 }
