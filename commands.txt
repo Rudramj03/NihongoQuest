@@ -1,0 +1,90 @@
+==========================================================================
+NihongoQuest — command reference
+==========================================================================
+Path      : /var/www/NihongoQuest
+Domain    : https://nihongo.13-61-25-153.sslip.io
+Port      : 5001 (gunicorn, 2 workers, bound to 127.0.0.1)
+pm2 name  : nihongoquest
+nginx     : /etc/nginx/sites-available/nihongoquest.conf  (see conf.txt)
+Repo      : git@github.com:Rudramj03/NihongoQuest.git
+Stack     : Flask · Jinja2 · vanilla JS · no database (JSON files in data/)
+
+
+--------------------------------------------------------------------------
+FIRST-TIME SETUP
+--------------------------------------------------------------------------
+cd /var/www/NihongoQuest
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+--------------------------------------------------------------------------
+RUN
+--------------------------------------------------------------------------
+source venv/bin/activate
+python app.py                              # dev server on http://localhost:5001
+
+gunicorn -b 127.0.0.1:5001 app:app         # production shape, run by hand
+
+# what pm2 actually runs:
+venv/bin/gunicorn --workers 2 --bind 127.0.0.1:5001 --access-logfile - app:app
+
+
+--------------------------------------------------------------------------
+PM2
+--------------------------------------------------------------------------
+pm2 start ecosystem.config.js       # first time only
+pm2 restart nihongoquest            # after editing app.py or data/*.json
+pm2 stop nihongoquest
+pm2 logs nihongoquest               # gunicorn access log goes to stdout
+pm2 describe nihongoquest
+pm2 save
+
+
+--------------------------------------------------------------------------
+CONTENT
+--------------------------------------------------------------------------
+All learning content is JSON under data/, keyed by JLPT level:
+    data/kana.json  data/vocab.json  data/kanji.json  data/grammar.json
+
+Content is loaded at startup, so edits need a restart:
+python -m json.tool data/vocab.json > /dev/null   # validate before restarting
+pm2 restart nihongoquest
+
+
+--------------------------------------------------------------------------
+ANDROID APK
+--------------------------------------------------------------------------
+KS_PASS=your-keystore-password ./android/build.sh
+
+Manual aapt2/d8 build — no Gradle. Needs /opt/android-sdk (build-tools 34)
+and a JDK. The signed APK is copied to static/app/ and served from the site.
+The keystore lives OUTSIDE the repo under ~/keys/ (override with KEYSTORE=...).
+Keep it backed up: Android ties updates to the signing key.
+
+
+--------------------------------------------------------------------------
+NGINX / TLS
+--------------------------------------------------------------------------
+sudo nano /etc/nginx/sites-available/nihongoquest.conf
+sudo nginx -t && sudo systemctl reload nginx
+sudo certbot --nginx -d nihongo.13-61-25-153.sslip.io    # first issue
+sudo certbot certificates
+sudo certbot renew --dry-run
+
+
+--------------------------------------------------------------------------
+CHECKS
+--------------------------------------------------------------------------
+curl -I localhost:5001
+curl -I https://nihongo.13-61-25-153.sslip.io
+ss -tlnp | grep 5001
+
+
+--------------------------------------------------------------------------
+GIT
+--------------------------------------------------------------------------
+git status
+git add -A && git commit -m "message"
+git push origin main
